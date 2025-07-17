@@ -1,0 +1,101 @@
+/* fonts configurations */
+/** Poppins */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins/poppins-v23-latin-regular.woff2');
+    font-weight: 400; font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins/poppins-v23-latin-600.woff2');
+    font-weight: 600; font-style: noemal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins/poppins-v23-latin-800.woff2');
+    font-weight: 800; font-style: normal;
+    font-display: swap;
+}
+
+/** Inter */
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter/inter-v19-latin-regular.woff2');
+    font-weight: 500; font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter/inter-v19-latin-300.woff2');
+    font-weight: 300; font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter/inter-v19-latin-700.woff2');
+    font-weight: 700; font-style: normal;
+    font-display: swap;
+}
+
+/* root */
+:root{
+    /* colors */
+    --yellow: #ffd442;
+	--blue: #305B91;
+	--dark_gray: #343434;
+	--light_gray: #F2F2F2;
+    --whiteBg: white;
+    
+    /* text */
+    --h1Sizes: clamp(1.25rem, 1vw, 2rem);
+    --h2Sizes: clamp(.875rem, 1vw, 1.5rem);
+    --h3Sizes: clamp(.75rem, 1vw, 1rem);
+    --h4Sizes: clamp(.625rem, 1vw, 1rem);
+    --pSizes: clamp(.625rem, 1vw, 1.125rem);
+    --detailSizes: clamp(.5rem, 1vw, 1rem);
+
+    --titleFont: 'Poppins', Helvetica, sans-serif;
+    --textsFont: 'Inter', Arial, sans-serif;
+
+    /* breakpoints */
+    --mobileMinWidth: 20rem; 
+    --tabletMinWidth: 46.5rem;
+    --desktopMinWidth: 64rem;
+}
+
+/* reseting configurations */
+*{
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--whiteBg);
+    color: var(--dark_gray);
+    display: flex; flex-direction: column;
+    gap: 2rem;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    min-width: var(--mobileMinWidth);
+    max-width: 65rem;
+}
+
+h1, h2, h3, h4, h5, h6{font-family: var(--titleFont);}
+
+p, li, a{font-family: var(--textsFont);}
+
+a{
+    color: var(--dark_gray);
+    text-decoration: none;
+}
+
+ul{
+    list-style: inside;
+    list-style-type: none;
+}

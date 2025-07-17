@@ -1,0 +1,156 @@
+-- root: 
+	--yellow: #ffd442;
+	--blue: #305B91;
+	--dark_gray: #343434;
+	--light_gray: #F2F2F2;
+
+	--mobile_minWidth: 320px;
+	--tablet_minWidth: 744px;
+	--desktop_minWidth: 1280px;
+
+	// shorthands: 
+	// font: [font-style (italic, normal, oblique)], [font-variant (small-caps, normal...)], [font-weight (bold, normal, 100-900)], [font-size*], [line-height (separado por / após font-size)], [font-family*];
+
+	--title_hero: bold, clamp(20px, 1vw, 36px), 'Poppins';
+	--text_hero: medium, clamp(14px, 1vw, 24px), 'Poppins';
+	--titles_sections: bold, clamp(16px, 1vw, 36px), 'Poppins';
+	--subtitles_sections: bold, clamp(12px, 1vw, 16px), 'Poppins';
+	--title_cards: bold, clamp(10px, 1vw, 16px), 'Poppins';
+	--paragraph: normal, clamp(10px, 1vw, 18px); 'Inter';
+	--details: normal, clamp(8px, 1vw, 16px), 'Inter';
+	
+
+
+
+
+
+
+:website content 
+-- hero 
+----- h1: O primeiro passo para um amanhã brilhante
+----- p: Afeto, segurança e excelência para os primeiros passos rumo a um futuro cheio de possibilidades.
+----- ctas: Conheça a Aurora (secondary); Agendar visita (primary)
+
+-- about 
+---- h2: Aqui educar é iluminar <br>futuros
+---- h3: Sobre nós
+---- p:      Na Aurora, acreditamos que cada criança é única e deve ser acolhida com afeto, respeito e segurança. Nossa missão é despertar o potencial de cada pequeno, estimulando curiosidade, autonomia e valores humanos desde os primeiros passos. Com uma equipe dedicada, espaços planejados e uma abordagem pedagógica humanizada, cultivamos um ambiente onde aprender é também crescer, sonhar e se sentir amado todos os dias.
+---- h3: Nossos valores
+------ h4: Compromisso com a Infância
+-------- p: Valorizamos cada etapa do desenvolvimento, respeitando o ritmo único de cada criança e celebrando suas conquistas com sensibilidade
+------ h4: Ambiente acolhedor e seguro
+-------- p: Cultivamos um ambiente seguro e afetuoso, no qual cada criança se sente bem-vinda, cuidada e livre para se expressar
+------ h4: Excelência Pedagógica
+-------- p: Oferecemos uma educação fundamentada em práticas pedagógicas atualizadas, conduzida por profissionais comprometidos com o desenvolvimento integral
+------ h4: Transparência nas relações
+-------- p: Mantemos uma comunicação clara e constante com as famílias, fortalecendo a confiança e parceria na jornada educacional
+------ h4: Conduta Ética e Responsável
+-------- p: Atuamos com responsabilidade, respeito e integridade em todas as nossas decisões, priorizando o bem-estar das crianças, famílias e equipe
+
+
+-- educational approach 
+---- h2: Como cultivamos o aprender com o afeto
+---- h3: Proposta pedagógica
+------ p:    Crescer com confiança, brincar com liberdade e aprender com alegria: assim guiamos cada etapa do desenvolvimento infantil na Aurora. Nossa proposta pedagógica integra afeto, segurança e estímulos criativos para promover o desenvolvimento integral — emocional, social, cognitivo e motor — respeitando a singularidade de cada criança. Em um ambiente acolhedor e inspirador, incentivamos a curiosidade, a autonomia e a construção de valores que iluminam os primeiros passos rumo ao futuro.
+---- h3: Princípios norteadores
+------ h4: Afeto como base
+-------- p: Entendemos que o vínculo afetivo é a principal ponte para a aprendizagem significativa. Cada criança é acolhida e acompanhada respeitando suas emoções e individualidades.
+------ h4: Respeito ao ritimo individiual
+-------- p:    Valorizamos a singularidade de cada pequeno. Nossas atividades e vivências respeitam o tempo de cada um, estimulando autonomia, autoestima e curiosidade natural.
+------ h4: Aprender brincando
+-------- p: O brincar é o principal instrumento de desenvolvimento na primeira infância. Promovemos experiências lúdicas, criativas e sensoriais que despertam interesse e facilitam a construção do conhecimento.
+------ h4: Desenvolvimento Integral
+-------- p: Integramos atividades que estimulam aspectos cognitivos, motores, emocionais e sociais de forma equilibrada, preparando as crianças para os próximos ciclos com confiança e alegria.
+------ h4: Parceria com a familia
+-------- p: Acreditamos que a educação se fortalece na parceria com as famílias. Mantemos comunicação constante, convidando os responsáveis a participarem e acompanharem o desenvolvimento dos filhos.
+
+-- testimonials 
+---- h2: Palavras de quem confia no nosso trabalho
+---- h3: Depoimentos
+------ h4: Mariana, mãe de Felipe
+-------- p: Desde o primeiro dia, sentimos que o Felipe estava em um ambiente seguro e cheio de afeto. Ele chega em casa contando histórias, cantando músicas e mostrando o quanto está feliz. A Aurora realmente faz cada criança se sentir especial 
+*** avaliação: 5/5 
+------ h4: André, pai de Sofia
+-------- p: Escolher a Aurora foi a melhor decisão da nossa família. A atenção individualizada e o cuidado com o desenvolvimento emocional da Sofia fizeram toda a diferença. Às vezes sentimos falta de atividades extras fora do horário, mas no geral, a experiência tem sido maravilhosa
+*** rate: 4/5
+------h4: Luciana, mãe de Tomás
+-------- p: O que mais me encantou foi a forma como a escola valoriza o brincar e o aprender de maneira leve. O Tomás adora ir para a Aurora e nós, como pais, nos sentimos tranquilos por saber que ele está em boas mãos.
+** rate: 5 de 5
+------ h4: Rodrigo e Camila, pais do Gabriel
+-------- p: A equipe e extremamente acolhedora e sempre disposta a ouvir. A comunicação com a escola é constante e transparente. Gostaríamos de ver mais registros do dia a dia das crianças, mas confiamos no cuidado oferecido.
+** rate 4 de 5 
+
+-- contact 
+---- h2: Estamos prontos para acolher a sua família!
+---- h3: Contato
+------ p: Tire suas dúvidas, agende uma visita ou converse com nossa equipe. Estamos à disposição para apresentar cada detalhe e mostrar como a Aurora pode ser o início de uma linda jornada para o seu filho.
+** form: nome, email, assunto da conversa (select: dúvidas gerais, agendar visita, matrícula ou disponibilidade de vagas, solicitar retorno da equipe, sugestão ou feedback, outros), mensagem, botão enviar menssagem
+
+
+
+
+
+
+
+
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/poppins-v23-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/poppins-v23-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* poppins-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/poppins-v23-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+
+
+/* inter-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/inter-v19-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* inter-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/inter-v19-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+
+
+
+
+
+
+	
