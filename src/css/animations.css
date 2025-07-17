@@ -1,0 +1,31 @@
+@import url('main.css');
+/** mobile menu animations */
+.mobileItem:hover, .socialIcons_container:hover,
+.mobileMenu_btn:hover{
+    background-color: var(--yellow);
+}
+
+/** desktop menu animations */
+.desktopItem::after{
+    position: absolute;
+    left: 0; bottom: 0;
+    content: '';
+    width: 0; height: 2.5px;
+    border-radius: 1rem;
+    background-color: var(--yellow);
+    transition: width .3s ease-in-out;
+}
+
+.desktopItem:hover::after{
+    width: 100%;
+}
+
+/** global components animations */
+.button_primary:hover{
+    background-color: var(--yellowHover);
+}
+
+.socialButton:hover{
+    background-color: var(--yellow);
+}
+

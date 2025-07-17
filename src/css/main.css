@@ -1,4 +1,8 @@
-/* fonts configurations */
+/** importing others css files */
+@import url('components.css');
+@import url('animations.css');
+
+/** fonts configurations */
 /** Poppins */
 @font-face {
     font-family: 'Poppins';
@@ -47,6 +51,8 @@
 :root{
     /* colors */
     --yellow: #ffd442;
+    --yellowHover: #ffc400;
+    --yellow300: #f1d169;
 	--blue: #305B91;
 	--dark_gray: #343434;
 	--light_gray: #F2F2F2;
@@ -69,10 +75,16 @@
     --desktopMinWidth: 64rem;
 }
 
-/* reseting configurations */
+/** reseting configurations */
 *{
     padding: 0; margin: 0;
     box-sizing: border-box;
+}
+
+html{
+    display: flex; justify-content: center;
+    width: 100%;
+
 }
 
 body{
@@ -83,12 +95,16 @@ body{
     scroll-behavior: smooth;
     overflow-y: hidden;
     min-width: var(--mobileMinWidth);
-    max-width: 65rem;
+    max-width: 1500px;
+    width: 100%;
+    position: relative;
+    border: 1px solid blue;
 }
 
-h1, h2, h3, h4, h5, h6{font-family: var(--titleFont);}
+h1, h2, h3, h4, h5, h6,
+a, button{font-family: var(--titleFont);}
 
-p, li, a{font-family: var(--textsFont);}
+p, li{font-family: var(--textsFont);}
 
 a{
     color: var(--dark_gray);
@@ -98,4 +114,36 @@ a{
 ul{
     list-style: inside;
     list-style-type: none;
+}
+
+
+/** medias queries */
+
+@media screen and (min-width: 320px) and (max-width: 826px) {
+   .mobileContainer{ display: flex; } 
+   .desktopContainer{ display: none;}
+}
+
+@media screen and (min-width: 827px) {
+    .mobileContainer{ display: none; }
+    .desktopContainer{ display: flex;}
+}
+
+@media screen and (max-width: 1000px){
+    .desktop_socials{ display: none;}
+    .desktopMenuButton{
+        margin: 0;
+        margin-left: 2rem;
+    }
+}
+
+/** global components */
+.button_primary{
+    padding: .5rem 2rem;
+    display: flex; place-content: center;
+    border: none; outline: none;
+    background-color: var(--yellow);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
 }

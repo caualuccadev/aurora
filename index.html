@@ -1,18 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO -->
-    <title>Escola Aurora - Ensino Infantil</title>
-    <meta name="description" content="Escola particular com foco em desenvolvimento integral da criança na cidade de Salvador.">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- SEO -->
+        <title>Escola Aurora - Ensino Infantil</title>
+        <meta name="description" content="Escola particular com foco em desenvolvimento integral da criança na cidade de Salvador.">
 
-    <!-- links and scripts -->
-    <link rel="stylesheet" href="src/css/main.css">
-    <script type="module" src="src/scripts/main.js" defer></script>
-</head>
-<body>
-    
-</body>
+        <!-- links and scripts -->
+        <link rel="stylesheet" href="src/css/main.css">
+        <script type="module" src="src/scripts/main.js" defer></script>
+    </head>
+    <body>
+        <div class="bg_openMenu" aria-hidden="true">
+            <!-- ? this div only shows when the mobile menu is opened 
+             ? and it has glass effect -->
+        </div>
+
+       <header class="headerPage" id="home">
+        <a href="#home" aria-label="Página inicial da Aurora">
+            <img src="" alt="Logo da Escola Aurora" srcset="">
+            <!-- TODO: add logos images on document -->
+        </a>
+
+        <!--? MOBILE NAVIGATION -->
+        <nav class="mobileContainer">
+            <button class="mobileMenu_btn" type="button" aria-label="Abrir menu de navegação">
+                <img src="src/assets/svgs/list.svg" alt="" aria-hidden="true">
+            </button>
+
+            <ul class="mobileMenu">
+                <li><a class="mobileItem" href="#home" aria-label="Página inicial da Aurora">Início</a></li>
+                <li><a class="mobileItem" href="#about" aria-label="História da Escola Aurora">Sobre nós</a></li>
+                <li><a class="mobileItem" href="#educational_approach" aria-label="Proposta pedagógica da Aurora">Proposta Pedagógica</a></li>
+                <li><a class="mobileItem" href="#testimonials" aria-label="Depoimentos de pais de alunos da Aurora">Depoimentos</a></li>
+                <li><a class="mobileItem" href="#contact" aria-label="Seção de contato com a Escola Aurora">Contato</a></li>
+                <li>
+                    <ul class="mobileMenu_footer" aria-label="Redes sociais da Aurora">
+                        <li class="socialIcons_container">
+                            <button class="mobile_socialItem socialButton" aria-label="Facebook" value="facebook">
+                                <img src="src/assets/svgs/facebook.svg" alt="Facebook">
+                            </button>
+                        </li>
+                        <li class="socialIcons_container">
+                            <button class="mobile_socialItem socialButton" aria-label="Instagram" value="instagram">
+                                <img src="src/assets/svgs/instagram.svg" alt="Instagram" >
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav> <!--? END OF MOBILE NAVIGATION -->
+
+        <!--? DESKTOP NAVIGATION -->
+        <nav class="desktopContainer">
+            <ul class="desktopMenu">
+                <li>
+                    <a class="desktopItem" href="#home" aria-label="Início da página da Aurora">Início</a>
+                </li>
+                <li>
+                    <a class="desktopItem" href="#about" aria-label="Sobre a Escola Aurora">Sobre</a>
+                </li>
+                <li>
+                    <a class="desktopItem" href="#educational_approach" aria-label="Proposta Pedagógica da Aurora">Proposta Pedagógica</a>
+                </li>
+                <li>
+                    <a class="desktopItem" href="#testimonials" aria-label="Depoimentos de pais dos alunos da Aurora">Depoimentos</a>
+                </li>
+                <li>
+                    <button class="button_primary desktopMenuButton" value="contact" type="button" aria-label="Contato com a Aurora">Contato</button>
+                </li>
+            </ul>
+
+            <ul class="desktop_socials" aria-label="Redes sociais da Aurora">
+                <li class="socialItem">
+                    <button class="socialButton" value="facebook" aria-label="Facebook da Aurora">
+                        <img src="src/assets/svgs/facebook.svg" alt="Ícone Facebook" srcset="">
+                    </button>
+                </li>
+                <li class="socialItem">
+                    <button class="socialButton" value="instagram" aria-label="Instagram da Aurora">
+                        <img src="src/assets/svgs/instagram.svg" alt="Ícone Instagram">
+                    </button>
+                </li>
+            </ul>
+        </nav>
+
+
+       </header> 
+    </body>
 </html>
