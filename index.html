@@ -152,7 +152,7 @@
 
         <!--* main content -->
 
-        <main class=" w-full pt-[2rem] border border-gray-900">
+        <main class=" w-full pt-[2rem] border border-gray-900 overflow-hidden">
 
             <!--* hero section -->
             <section class=" w-full px-4 flex
@@ -185,8 +185,9 @@
 
                         <a href="#about" role="button" aria-label="Ir para seção de sobre"
                             class="border-2 border-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
-                            hover:bg-[--yellowHover] duration-300 ease-in-out
-                            hover:text-gray-800 duration-300 ease-in-out
+                            hover:bg-[--blue] duration-300 ease-in-out
+                            hover:text-white duration-300 ease-in-out
+                            hover:border-[--blue] duration-300 ease-in-out
                             md:w-full lg:w-fit text-sm"
                             >
                             Conheça a Aurora
@@ -194,8 +195,9 @@
 
                         <a href="#contact" role="button" aria-label="Ir para seção de contato"
                             class="border-2 border-[--yellow] bg-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
-                            hover:bg-[--yellowHover] duration-300 ease-in-out
-                            hover:text-gray-800 duration-300 ease-in-out
+                            hover:bg-[--blue] duration-300 ease-in-out
+                            hover:text-white duration-300 ease-in-out
+                            hover:border-[--blue] duration-300 ease-in-out
                             md:w-full lg:w-fit text-sm">
                             Agendar visita
                         </a>
@@ -233,7 +235,7 @@
             </div>
 
             <!--* about section -->
-            <section id="about" class="px-4 py-8 w-full border-2 border-red-600">
+            <section id="about" class="px-4 py-8 w-full">
                 <header class="relative flex w-full">
                     <section class="z-10 flex flex-col gap-2">
                         <h3 class="subtitle">Sobre nós</h3>
@@ -275,13 +277,13 @@
                     <section 
                         class="flex gap-4 w-full flex-col 
                         md:flex-row flex-wrap">
-                        <article class="flex flex-col flex-auto border-2 border-[--yellow] rounded-xl overflow-hidden w-full 
-                                md:max-w-[45%]"
+                        <article class=" group flex flex-col flex-auto border-2 border-[--yellow] rounded-xl overflow-hidden w-full 
+                                md:max-w-[45%]
+                                hover:border-[--blue] duration-300 ease-in-out"
                                 x-data="{open: false}">
                             <header role="button" aria-label="Abrir conteúdo"
                                  @click="open = !open"
-                                class="flex items-center justify-between gap-4 w-full p-3 
-                            hover:bg-[--light_gray] duration-300 ease-in-out">
+                                class="flex items-center justify-between gap-4 w-full p-3">
                                 <h4 class="text-sm font-[550] text-nowrap md:text-base lg:text-md">
                                     Compromisso com a Infância
                                 </h4>
@@ -300,12 +302,12 @@
                         </article>
 
                         <article class="flex flex-col flex-auto border-2 border-[--yellow] rounded-xl overflow-hidden w-full 
-                                md:max-w-[45%]"
+                                md:max-w-[45%]
+                                hover:border-[--blue] duration-300 ease-in-out"
                                 x-data="{open: false}">
                             <header role="button" aria-label="Abrir conteúdo"
                                 @click="open = !open"
-                                class="flex items-center justify-between gap-4 w-full p-3 
-                                    hover:bg-[--light_gray] duration-300 ease-in-out">
+                                class="flex items-center justify-between gap-4 w-full p-3">
                                 <h4 class="text-sm font-[550] text-nowrap md:text-base lg:text-md">
                                     Ambiente acolhedor e seguro
                                 </h4>
@@ -324,12 +326,12 @@
                         </article>
 
                         <article class="flex flex-col flex-auto border-2 border-[--yellow] rounded-xl overflow-hidden w-full 
-                                md:max-w-[45%]"
+                                md:max-w-[45%]
+                                hover:border-[--blue] duration-300 ease-in-out"
                                 x-data="{open: false}">
                             <header role="button" aria-label="Abrir conteúdo"
                                 @click="open = !open"
-                                class="flex items-center justify-between gap-4 w-full p-3 
-                                    hover:bg-[--light_gray] duration-300 ease-in-out">
+                                class="flex items-center justify-between gap-4 w-full p-3">
                                 <h4 class="text-sm font-[550] text-nowrap md:text-base lg:text-md">
                                     Excelência Pedagógica
                                 </h4>
@@ -349,12 +351,12 @@
                         </article>
 
                         <article class="flex flex-col flex-auto border-2 border-[--yellow] rounded-xl overflow-hidden w-full 
-                                md:max-w-[45%]"
+                                md:max-w-[45%]
+                                hover:border-[--blue] duration-300 ease-in-out"
                                 x-data="{open: false}">
                             <header role="button" aria-label="Abrir conteúdo"
                                 @click="open = !open"
-                                class="flex items-center justify-between gap-4 w-full p-3 
-                                    hover:bg-[--light_gray] duration-300 ease-in-out">
+                                class="flex items-center justify-between gap-4 w-full p-3">
                                 <h4 class="text-sm font-[550] text-nowrap md:text-base lg:text-md">
                                     Transparência nas relações
                                 </h4>
@@ -373,12 +375,12 @@
                         </article>
 
                         <article class="flex flex-col flex-auto border-2 border-[--yellow] rounded-xl overflow-hidden w-full 
-                                md:max-w-[45%]"
+                                md:max-w-[45%]
+                                hover:border-[--blue] duration-300 ease-in-out"
                                 x-data="{open: false}">
                             <header role="button" aria-label="Abrir conteúdo"
                                 @click="open = !open"
-                                class="flex items-center justify-between gap-4 w-full p-3 
-                                    hover:bg-[--light_gray] duration-300 ease-in-out">
+                                class="flex items-center justify-between gap-4 w-full p-3">
                                 <h4 class="text-sm font-[550] text-nowrap md:text-base lg:text-md">
                                     Conduta Ética e Responsável
                                 </h4>
@@ -404,24 +406,26 @@
                         class="flex w-full gap-[1rem] font-semibold flex-wrap
                         lg:flex-row mt-auto">
 
-                        <a href="#about" role="button" aria-label="Ir para seção de sobre"
-                            class="border-2 border-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
-                            hover:bg-[--yellowHover] duration-300 ease-in-out
-                            hover:text-gray-800 duration-300 ease-in-out
-                            md:w-full lg:w-fit text-sm"
-                            >
-                            Conheça a Aurora
-                        </a>
+                    <a href="pages/galeria.html" role="button" aria-label="Ir para seção de sobre"
+                        class="border-2 border-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
+                        hover:bg-[--blue] duration-300 ease-in-out
+                        hover:text-white duration-300 ease-in-out
+                        hover:border-[--blue] duration-300 ease-in-out
+                        md:w-full lg:w-fit text-sm"
+                        >
+                        Conheça nossa infraestrutura
+                    </a>
 
-                        <a href="#contact" role="button" aria-label="Ir para seção de contato"
-                            class="border-2 border-[--yellow] bg-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
-                            hover:bg-[--yellowHover] duration-300 ease-in-out
-                            hover:text-gray-800 duration-300 ease-in-out
-                            md:w-full lg:w-fit text-sm">
-                            Agendar visita
-                        </a>
+                    <a href="#contact" role="button" aria-label="Ir para seção de contato"
+                        class="border-2 border-[--yellow] bg-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
+                        hover:bg-[--blue] duration-300 ease-in-out
+                        hover:text-white duration-300 ease-in-out
+                        hover:border-[--blue] duration-300 ease-in-out
+                        md:w-full lg:w-fit text-sm">
+                        Agendar visita
+                    </a>
 
-                    </nav>
+                </nav>
                 
             </section> <!--* end of about section-->
 
@@ -430,9 +434,450 @@
             </div>
 
             <!--* educational approach section -->
-            <section id="approach">
+            <section id="approach" class=" py-8 px-4 w-full">
 
+                <section class="flex flex-col w-full items-stretch 
+                        lg:flex-row items-start justify-between">
+                    <header class="relative flex flex-col w-full justify-between items-stretch gap-2
+                            lg:max-w-[50%]">
+                        <section class="z-10 flex flex-col gap-2">
+                            <h3 class="subtitle">Proposta Educacional</h3>
+                            <h2 class="font-semibold text-xl
+                                md:text-2xl
+                                lg:text-3xl">
+                                Como cultivamos o aprender <br> com o afeto
+                            </h2>
+                        </section>
+                        <!-- content approach -->
+                        <p class="flex w-full text-base mb-8
+                            sm: text-sm 
+                            md:text-md
+                            lg:text-lg">
+                            Crescer com confiança, brincar com liberdade e aprender com alegria: assim guiamos
+                            cada etapa do desenvolvimento infantil na Aurora. Nossa proposta pedagógica integra afeto,
+                            segurança e estímulos criativos para promover o desenvolvimento integral — emocional, social,
+                            e motor — respeitando a singularidade de cada criança. Em um ambiente acolhedor e inspirador,
+                            incentivamos a curiosidade, a autonomia e a construção de valores que iluminam os primeiros passos
+                            rumo ao futuro.
+                        </p>
+
+                        <!-- ctas -->
+                        <nav aria-label="Navegação da página" 
+                        class="flex w-full gap-[1rem] font-semibold flex-wrap
+                        lg:flex-row mt-auto">
+
+                            <a href="pages/galeria.html" role="button" aria-label="Ir para seção de sobre"
+                                class="border-2 border-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
+                                hover:bg-[--blue] duration-300 ease-in-out
+                                hover:text-white duration-300 ease-in-out
+                                hover:border-[--blue] duration-300 ease-in-out
+                                md:w-full lg:w-fit text-sm"
+                                >
+                                Conheça nossa infraestrutura
+                            </a>
+
+                            <a href="#contact" role="button" aria-label="Ir para seção de contato"
+                                class="border-2 border-[--yellow] bg-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
+                                hover:bg-[--blue] duration-300 ease-in-out
+                                hover:text-white duration-300 ease-in-out
+                                hover:border-[--blue] duration-300 ease-in-out
+                                md:w-full lg:w-fit text-sm">
+                                Agendar visita
+                            </a>
+
+                        </nav>
+                        
+                    </header>
+                        
+                    <!-- image approach -->
+                    <section class="relative flex mt-5 w-full items-center justify-center
+                            lg:mt-0  lg:max-w-[45%]">
+                        <img src="src/assets/pngs/class about.png" alt=""
+                        class="flex w-full md:w-1/2 lg:w-full">
+                        <img src="src/assets/svgs/yellow_border.svg" alt="" aria-hidden="true"
+                            class="absolute top-0 left-0 w-full
+                            md:w-1/2 left-[50%] translate-x-[-50%] translate-y-[0%]
+                            lg:top-0 lg:w-full   ">
+                    </section>
+                </section>   
+
+                <!-- principles-->
+                    <h3 class="text-base flex flex-col w-min font-semibold text-nowrap mt-[3rem] mb-4">
+                        Princípios norteadores 
+                        <img src="src/assets/svgs/underline.svg" aria-hidden="true" alt=""
+                        class="flex w-full">
+                    </h3>
+
+                    <section class="flex flex-wrap items-start justify-between gap-3">
+
+                        <article class=" group flex flex-col flex-auto border-2 border-[--yellowHover] rounded-xl overflow-hidden w-full
+                                        md:flex-row
+                                        lg:max-w-[48%]
+                                        hover:border-[--blue] duration-300 ease-in-out">
+
+                            <aside class="p-4 flex items-center justify-start text-[--yellowHover] font-semibold w-full text-4xl
+                                         md:w-1/6 justify-start
+                                         group-hover:text-[--blue] duration-300 ease-in-out">
+                                01
+                            </aside>
+
+                            <main class="flex flex-col gap-1 items-start justify-between py-1 px-3">
+                                <h4 class="font-[530]">
+                                    Afeto como base
+                                </h4>
+
+                                <p class="text-sm lg:text-md">
+                                    Entendemos que o vínculo afetivo é a principal ponte para a aprendizagem significativa.
+                                    Cada criança é acolhida e acompanhada respeitando suas emoções e individualidades.
+                                </p>
+                            </main>
+                        </article>
+
+                        <article class="group flex flex-col flex-auto border-2 border-[--yellowHover] rounded-xl overflow-hidden
+                                        md:flex-row
+                                        lg:max-w-[48%]
+                                        hover:border-[--blue] duration-300 ease-in-out">
+
+                            <aside class="p-4 flex items-center justify-start text-[--yellowHover] font-semibold w-full text-4xl
+                                         md:w-1/6 justify-star
+                                         group-hover:text-[--blue] duration-300 ease-in-out">
+                                02
+                            </aside>
+
+                            <main class="flex flex-col gap-1 items-start justify-between py-1 px-3">
+                                <h4 class="font-[530]">
+                                    Respeito ao ritimo individiual
+                                </h4>
+
+                                <p class="text-sm lg:text-md">
+                                    Valorizamos a singularidade de cada pequeno. Nossas atividades e vivências respeitam o
+                                    tempo de cada um, estimulando autonomia, autoestima e curiosidade natural.
+                                </p>
+                            </main>
+                        </article>
+
+                        <article class="group flex flex-col flex-auto border-2 border-[--yellowHover] rounded-xl overflow-hidden
+                                        md:flex-row
+                                        lg:max-w-[48%]
+                                        hover:border-[--blue] duration-300 ease-in-out">
+
+                            <aside class="p-4 flex items-center justify-start text-[--yellowHover] font-semibold w-full text-4xl
+                                         md:w-1/6 justify-star
+                                         group-hover:text-[--blue] duration-300 ease-in-out">
+                                03
+                            </aside>
+
+                            <main class="flex flex-col gap-1 items-start justify-between py-1 px-3">
+                                <h4 class="font-[530]">
+                                    Aprender brincando
+                                </h4>
+
+                                <p class="text-sm lg:text-md">
+                                    O brincar é o principal instrumento de desenvolvimento na primeira infância.
+                                    Promovemos experiências lúdicas, criativas e sensoriais que despertam interesse e facilitam a
+                                    construção do conhecimento.
+                                </p>
+                            </main>
+                        </article>
+
+                        <article class="group flex flex-col flex-auto border-2 border-[--yellowHover] rounded-xl overflow-hidden
+                                        md:flex-row
+                                        lg:max-w-[48%]
+                                        hover:border-[--blue] duration-300 ease-in-out">
+
+                            <aside class="p-4 flex items-center justify-start text-[--yellowHover] font-semibold w-full text-4xl
+                                         md:w-1/6 justify-star
+                                         group-hover:text-[--blue] duration-300 ease-in-out">
+                                04
+                            </aside>
+
+                            <main class="flex flex-col gap-1 items-start justify-between py-1 px-3">
+                                <h4 class="font-[530]">
+                                    Desenvolvimento Integral
+                                </h4>
+
+                                <p class="text-sm lg:text-md">
+                                    Integramos atividades que estimulam aspectos cognitivos, motores, emocionais e sociais
+                                    de forma equilibrada, preparando as crianças para os próximos ciclos com confiança e alegria.
+                                </p>
+                            </main>
+                        </article>
+
+                        <article class="group flex flex-col flex-auto border-2 border-[--yellowHover] rounded-xl overflow-hidden
+                                        md:flex-row
+                                        lg:max-w-[48%]
+                                        hover:border-[--blue] duration-300 ease-in-out">
+
+                            <aside class="p-4 flex items-center justify-start text-[--yellowHover] font-semibold w-full text-4xl
+                                         md:w-1/6 justify-star
+                                         group-hover:text-[--blue] duration-300 ease-in-out">
+                                05
+                            </aside>
+
+                            <main class="flex flex-col gap-1 items-start justify-between py-1 px-3">
+                                <h4 class="font-[530]">
+                                    Parceria com a familia
+                                </h4>
+
+                                <p class="text-sm lg:text-md">
+                                    Acreditamos que a educação se fortalece na parceria com as famílias. Mantemos comunicação
+                                    constante, convidando os responsáveis a participarem e acompanharem o desenvolvimento dos filhos.
+                                </p>
+                            </main>
+                        </article>
+
+                    </section> <!-- end of principles -->
             </section> <!--* end of approach-->
+
+            <div aria-hidden="true" class="flex w-full mt-[2rem] mb-[1rem] opacity-45">
+                <img src="src/assets/svgs/divisor.svg" alt="" class="w-full">
+            </div>
+
+            <!--* testimonials section  -->
+            <section id="testimonials" class=" py-8 px-4 w-full">
+                <header class="relative flex w-full">
+                    <section class="z-10 flex flex-col gap-2">
+                        <h3 class="subtitle">Depoimentos</h3>
+                        <h2 class="font-semibold text-xl
+                            md:text-2xl
+                            lg:text-3xl">
+                            Palavras de quem confia no<br> nosso trabalho
+                        </h2>
+                    </section>
+
+                    <section aria-hidden="true" class="hidden md:flex">
+                        <img src="src/assets/svgs/"  
+                        class="absolute right-0 opacity-45
+                        lg:top-0 w-[24rem] border border-blue-500" <!--! COLOCAR IMAGEM AQUI -->
+                    </section>
+                </header>
+
+                <ul class="grid grid-cols-1 gap-5 mt-8
+                    md:grid-cols-2 grid-row-auto
+                    lg:grid-cols-3
+                    xl:grid-cols-4">
+
+                    <li class="group flex flex-col items-start justify-between gap-2 p-4 bg-[--light_gray] rounded-lg text-base w-full border-2 border-transparent
+                        
+                        hover:border-[--blue] duration-300 ease-in-out">
+                        <h4 class="font-[530] sm:text-sm lg:text-md">
+                            Mariana, mãe de Felipe
+                        </h4>
+                        <p class="text-base sm:text-sm lg:text-md">
+                            Desde o primeiro dia, sentimos que o Felipe estava em um ambiente seguro e cheio de afeto.
+                            Ele chega em casa contando histórias, cantando músicas e mostrando o quanto está feliz.
+                            A Aurora realmente faz cada criança se sentir especial 
+                        </p>
+                        <section aria-label="Avaliação da mãe" aria-valuenow="100%" 
+                            class="flex gap-2 items-center justify-between mt-2"> 
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                        </section>
+                    </li>
+
+                    <li class="group flex flex-col items-start justify-between gap-2 p-4 bg-[--light_gray] rounded-lg text-base w-full border-2 border-transparent
+                        hover:border-[--blue] duration-300 ease-in-out">
+                        <h4 class="font-[530] sm:text-sm lg:text-md">
+                            André, pai de Sofia
+                        </h4>
+                        <p class="text-base sm:text-sm lg:text-md">
+                            Escolher a Aurora foi a melhor decisão da nossa família. A atenção individualizada e
+                            o cuidado com o desenvolvimento emocional da Sofia fizeram toda a diferença. Às vezes sentimos falta
+                            de atividades extras fora do horário, mas no geral, a experiência tem sido maravilhosa
+                        </p>
+                        <section aria-label="Avaliação da mãe" aria-valuenow="90%" 
+                            class="flex gap-2 items-center justify-between mt-2"> 
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                        </section>
+                    </li>
+
+                    <li class="group flex flex-col items-start justify-between gap-2 p-4 bg-[--light_gray] rounded-lg text-base w-full border-2 border-transparent
+                        hover:border-[--blue] duration-300 ease-in-out">
+                        <h4 class="font-[530] sm:text-sm lg:text-md">
+                            Luciana, mãe de Tomás
+                        </h4>
+                        <p class="text-base sm:text-sm lg:text-md">
+                            O que mais me encantou foi a forma como a escola valoriza o brincar e o aprender
+                            de maneira leve. O Tomás adora ir para a Aurora e nós, como pais, nos sentimos tranquilos por saber
+                            que ele está em boas mãos.
+                        </p>
+                        <section aria-label="Avaliação da mãe" aria-valuenow="100%" 
+                            class="flex gap-2 items-center justify-between mt-2"> 
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                        </section>
+                    </li>
+
+                    <li class="group flex flex-col items-start justify-between gap-2 p-4 bg-[--light_gray] rounded-lg text-base w-full border-2 border-transparent
+                        hover:border-[--blue] duration-300 ease-in-out">
+                        <h4 class="font-[530] sm:text-sm lg:text-md">
+                            Rodrigo e Camila, pais do Gabriel
+                        </h4>
+                        <p class="text-base sm:text-sm lg:text-md">
+                            A equipe e extremamente acolhedora e sempre disposta a ouvir. A comunicação com a escola é
+                            constante e transparente. Gostaríamos de ver mais registros do dia a dia das crianças, mas confiamos no
+                            cuidado oferecido.
+                        </p>
+                        <section aria-label="Avaliação da mãe" aria-valuenow="90%" 
+                            class="flex gap-2 items-center justify-between mt-2"> 
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                            <img src="src/assets/svgs/star.svg" alt=""  aria-hidden="true">
+                        </section>
+                    </li>
+                </ul>
+            </section> <!--* end of testimonials-->
+
+            <div aria-hidden="true" class="flex w-full mt-[2rem] mb-[1rem] opacity-45">
+                <img src="src/assets/svgs/divisor.svg" alt="" class="w-full">
+            </div>
+
+            <!--* contact section -->
+            <section id="contact" class="py-8 px-4 w-full">
+                <header class="relative flex w-full">
+                    <section class="z-10 flex flex-col gap-2">
+                        <h3 class="subtitle">Contato</h3>
+                        <h2 class="font-semibold text-xl
+                            md:text-2xl
+                            lg:text-3xl">
+                            Estamos prontos para acolher<br> a sua família!
+                        </h2>
+
+                        <p class="w-full md:w-1/2">
+                            Tire suas dúvidas, agende uma visita ou converse com nossa equipe. Estamos à disposição para
+                            apresentar cada detalhe e mostrar como a Aurora pode ser o início de uma linda jornada para o seu filho.
+                        </p>
+                    </section>
+
+                    <section aria-hidden="true" class="hidden md:flex">
+                        <img src="src/assets/svgs/"  
+                        class="absolute right-0 opacity-45
+                        lg:top-0 w-[24rem] border border-blue-500" <!--! COLOCAR IMAGEM AQUI -->
+                    </section>
+
+
+                </header>
+
+                <form action="" class="flex flex-col mt-5 gap-4 w-full 
+                                md:w-1/2
+                                lg:w-1/3">
+                    <label for="name" class="flex flex-col w-full gap-1">
+                        Nome
+                        <input type="text" name="name" id="nameUser"
+                            class="border border-[--yellowHover] rounded-lg py-1 px-2 outline-none text-sm
+                            focus:border-[--blue]">
+                        <p class="text-xs flex px-4 text-red-700">
+                            Mensagem de erro
+                        </p>
+                    </label>
+
+                    <label for="email" class="flex flex-col w-full gap-1">
+                        Email
+                        <input type="email" name="email" id="emailUser"
+                            class="border border-[--yellowHover] rounded-lg py-1 px-2 outline-none text-sm
+                            focus:border-[--blue]">
+                        <p class="text-xs flex px-4 text-red-700">
+                            Mensagem de erro
+                        </p>
+                    </label>
+
+                    <label for="name" class="flex flex-col w-full gap-1">
+                        Assunto
+
+                        <div x-data="() => ({
+                            openMenu: false,
+                            value: 'Escolher assunto'
+                        })" class="relative">
+                            <p @click=" openMenu = !openMenu "
+                                class="border border-[--yellowHover] rounded-lg py-1 px-2 flex justify-between text-sm cursor-pointer">
+                                <span  x-text="value" class="text-sm"></span>
+                                <img src="src/assets/svgs/chevron-down.svg" alt="" aria-hidden="true"
+                                    :class="{ 'rotate-180': openMenu }"
+                                    class="transition-transform duration-300 ease-in-out">
+                            </p>
+
+                            <ul x-show="openMenu" x-transition
+                                class="mt-2 flex flex-col gap-3 rounded-lg overflow-hidden shadow-lg p-2">
+                                <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
+                                    hover:text-[--blue] duration-300 ease-in-out
+                                    hover:border-b-[--blue] duration-300 ease-in-out"
+                                    @click="value = $event.target.textContent; openMenu = false">
+                                    Dúvidas Gerais
+                                </li>
+
+                                <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
+                                    hover:text-[--blue] duration-300 ease-in-out
+                                    hover:border-b-[--blue] duration-300 ease-in-out"
+                                    @click="value = $event.target.textContent; openMenu = false">
+                                    Agendar visita
+                                </li>
+
+                                 <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
+                                    hover:text-[--blue] duration-300 ease-in-out
+                                    hover:border-b-[--blue] duration-300 ease-in-out"
+                                    @click="value = $event.target.textContent; openMenu = false">
+                                    Matrículas
+                                </li>
+                                <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
+                                    hover:text-[--blue] duration-300 ease-in-out
+                                    hover:border-b-[--blue] duration-300 ease-in-out"
+                                    @click="value = $event.target.textContent; openMenu = false">
+                                    Disponibilidade de vagas
+                                </li>
+                                <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
+                                    hover:text-[--blue] duration-300 ease-in-
+                                    hover:border-b-[--blue] duration-300 ease-in-out"
+                                    @click="value = $event.target.textContent; openMenu = false">
+                                    Solicitar retorno da equipe
+                                </li>
+                                <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
+                                    hover:text-[--blue] duration-300 ease-in-out
+                                    hover:border-b-[--blue] duration-300 ease-in-out"
+                                    @click="value = $event.target.textContent; openMenu = false">
+                                    Sugestão ou feedback
+                                </li>
+                                <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
+                                    hover:text-[--blue] duration-300 ease-in-out
+                                    hover:border-b-[--blue] duration-300 ease-in-out"
+                                    @click="value = $event.target.textContent; openMenu = false">
+                                    Outros
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <p class="text-xs flex px-4 text-red-700">
+                            Mensagem de erro
+                        </p>
+                    </label>
+
+                    <label for="message" class="flex flex-col w-full gap-1">
+                        Mensagem
+                        <textarea name="message" id="messageUser" 
+                            class="border border-[--yellowHover] rounded-lg py-1 px-2 outline-none overflow-y-auto text-sm
+                            focus:border-[--blue]"></textarea>
+
+                        <p class="text-xs flex px-4 text-red-700">
+                            Mensagem de erro
+                        </p>
+                    </label>
+
+                    <button class="flex w-full bg-[--yellow] rounded-lg p-2 items-center justify-center font-semibold
+                                    hover:bg-[--blue] duration-300 ease-in-out
+                                    hover:text-white duration-300 ease-in-out">
+                        Enviar
+                    </button>
+                </form>
+            </section>
         </main>
 
         
