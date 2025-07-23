@@ -55,6 +55,7 @@
     --yellow300: #f1d169;
 	--blue: #305B91;
 	--dark_gray: #343434;
+    --textColor: #1e1e1e;
 	--light_gray: #F2F2F2;
     --whiteBg: white;
     
@@ -73,6 +74,9 @@
     --mobileMinWidth: 20rem; 
     --tabletMinWidth: 46.5rem;
     --desktopMinWidth: 64rem;
+
+    /* sizes */
+    --halfScreen: 50vw;
 }
 
 /** reseting configurations */
@@ -82,68 +86,35 @@
 }
 
 html{
-    display: flex; justify-content: center;
-    width: 100%;
-
-}
-
-body{
-    background-color: var(--whiteBg);
-    color: var(--dark_gray);
-    display: flex; flex-direction: column;
-    gap: 2rem;
     scroll-behavior: smooth;
-    overflow-x: hidden;
-    min-width: var(--mobileMinWidth);
-    max-width: 1500px;
-    width: 100%;
-    position: relative;
-    border: 1px solid blue;
 }
 
 h1, h2, h3, h4, h5, h6,
-a, button{font-family: var(--titleFont);}
-
-p, li, label, input{font-family: var(--textsFont);}
-
-a{
+a, button{
+    font-family: var(--titleFont);
     color: var(--dark_gray);
-    text-decoration: none;
 }
 
-ul{
-    list-style: inside;
-    list-style-type: none;
+p, ul{
+    font-family: var(--textsFont);
+    color: var(--dark_gray);
 }
 
 
-/** medias queries */
-
-@media screen and (min-width: 320px) and (max-width: 826px) {
-   .mobileContainer{ display: flex; } 
-   .desktopContainer{ display: none;}
+/** global compoments */
+.subtitle{
+    color: var(--blue);
+    font-size: clamp(.875rem, 1vw, .9rem);
+    font-weight: 600;
+    position: relative;
+    text-indent: 6px;
 }
 
-@media screen and (min-width: 827px) {
-    .mobileContainer{ display: none; }
-    .desktopContainer{ display: flex;}
-}
-
-@media screen and (max-width: 1000px){
-    .desktop_socials{ display: none;}
-    .desktopMenuButton{
-        margin: 0;
-        margin-left: 2rem;
-    }
-}
-
-/** global components */
-.button_primary{
-    padding: .5rem 2rem;
-    display: flex; place-content: center;
-    border: none; outline: none;
-    background-color: var(--yellow);
-    border-radius: 2rem;
-    cursor: pointer;
-    transition: background-color .3s ease-in-out;
+.subtitle::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 3px; height: 100%;
+    background-color: var(--blue);
+    border-radius: .25rem;
 }

@@ -1,4 +1,11 @@
-import { handleOpenMenu, handleCloseMenu, handleSocials } from "./utils.js";
+import { handlerMenu, handleMenuItems, handleSocialItems, handleDesktopSocials } from "./utils.js";
 
 
-handleOpenMenu(); handleCloseMenu(); handleSocials();
+window.addEventListener('load', ()=>{
+    // functions to change the mobile menu visibility
+    handlerMenu(); handleMenuItems();
+
+    // functions to open social media 
+     handleSocialItems(); handleDesktopSocials();
+
+})

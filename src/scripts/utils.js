@@ -1,49 +1,122 @@
 //* functions to open and close the mobile menu
 
-//* variables needed
-const pageBg = document.querySelector('.bg_openMenu');
-const menuMobile = document.querySelector('.mobileMenu');
-const mobileButton = document.querySelector('.mobileMenu_btn');
-const mobileButtons = document.querySelectorAll('.mobileItem');
-const socialsButtons = document.querySelectorAll('.socialIcons_container');
+//* |__variables needed
+const bgPage = document.getElementById('pageBg');
+const mobileMenu = document.getElementById('menuMobile');
+const openMenu = document.getElementById('openMenu');
+const closeMenu = document.getElementById('closeMenu');
+const menuItems = document.getElementsByName('menuItem');
+const socialItem = document.getElementsByName('socialItem');
+const  desktopSocials = document.getElementsByName('socialItemDesktop');
 
-//* animations functions 
-import { slideIn, slideOut } from "./animations.js";
+//* |__ animations functions 
 
-export function handleOpenMenu(){
-    mobileButton.addEventListener('click', () =>{
-        // show the bg and the menu 
-        pageBg.style.display = 'flex';
+
+//* |___ functions 
+
+function handlerSize(idTarget, menuStatus, type){
+// this function will toggle the size of the elements 
+    const targetId = document.getElementById(idTarget);
+
+    switch(menuStatus){
+        case 'open':
+            if(type == 'bg'){
+                targetId.style.height = '100vh';
+                targetId.style.width = '100vw'
+            } else{
+                targetId.style.height = '90vh';
+                targetId.style.width = '80vw'
+            };
+
+            break;
         
-        slideIn('.mobileMenu', -100, 0, 5);
+        case 'close':
+            targetId.style.height = '0';
+            targetId.style.width = '0';
+    }
+}
 
-        console.log('botao do menu clicado')
+
+export function handlerMenu(){
+    openMenu.addEventListener('click', (event) =>{
+        event.stopPropagation();
+
+        handlerSize(mobileMenu.getAttribute("id"), 'open', 'menu');
+        handlerSize(pageBg.getAttribute('id'), 'open', 'bg');
     });
+
+    closeMenu.addEventListener('click', (event) =>{
+        event.stopPropagation();
+
+        handlerSize(mobileMenu.getAttribute("id"), 'close', 'menu');
+        handlerSize(pageBg.getAttribute('id'), 'close', 'bg');
+    });
+
+    bgPage.addEventListener('click', () =>{
+        handlerSize(mobileMenu.getAttribute("id"), 'close', 'menu');
+        handlerSize(pageBg.getAttribute('id'), 'close', 'bg');
+    })
+}
+
+
+export function handleMenuItems(){
+    for (let index = 0; index < menuItems.length; index++ ){
+        menuItems[index].addEventListener('click', (event) =>{
+            event.stopPropagation()
+            handlerSize(mobileMenu.getAttribute('id'), 'close', 'menu')
+            handlerSize(bgPage.getAttribute('id'), 'close', 'bg')
+        })
+    }
+}
+
+export function handleSocialItems(){
+    for(let index = 0; index < socialItem.length; index++){
+       
+
+        socialItem[index].addEventListener('click', () =>{
+            let socialType = socialItem[index].getAttribute('value');
+
+            switch(socialType){
+                case 'facebook':
+                    window.open('https://www.facebook.com', '_blank');
+                    handlerSize(mobileMenu.getAttribute('id'), 'close', 'menu');
+                    handlerSize(bgPage.getAttribute('id'), 'close', 'bg');
+                    break;
+
+                case 'instagram':
+                    window.open('https://www.instagram.com', '_blank');
+                    handlerSize(mobileMenu.getAttribute('id'), 'close', 'menu');
+                    handlerSize(bgPage.getAttribute('id'), 'close', 'bg');
+                    break;
+        };
+
+        });
+
+        
+    };
 };
 
-export function handleCloseMenu(){
-    mobileButtons.forEach(button => {
-        button.addEventListener('click', () =>{
-            pageBg.style.display = 'none';
-            slideOut('.mobileMenu', 0, 100, 1);
+export function handleDesktopSocials(){
+    for(let index = 0; index < desktopSocials.length; index++){
+        let socialtype = desktopSocials[index].getAttribute('value');
 
-            console.log('Item do menu clicado')
+        desktopSocials[index].addEventListener('click', (event) =>{
+            event.stopPropagation();
+            
+            switch(socialtype){
+            case 'facebook':
+                window.open('https://www.facebook.com', '_blank');
+                break;
+            
+            case 'instagram':
+                window.open('https://www.instagram.com', '_blank');
+                break;
+        }
         })
-        
-    });
-
-    pageBg.addEventListener('click', () =>{
-        pageBg.style.display = 'none';
-        slideOut('.mobileMenu', 0, 100, 1);
-    })
-
-    socialsButtons.forEach(button =>{
-        button.addEventListener('click', (event) =>{
-            pageBg.style.display = 'none';
-            slideOut('.mobileMenu', 0, 100, 1);
-        });
-    });
+    }
 }
+/*
+
 
 
 //* function to make buttons open others sites 
@@ -70,5 +143,5 @@ export function handleSocials(){
     };
 
 };
-
+*/
 // TODO: next -> functions to go to targets sections on buttons 

@@ -4,332 +4,437 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <!-- SEO -->
+        <!--* SEO -->
         <title>Escola Aurora - Ensino Infantil</title>
         <meta name="description" content="Escola particular com foco em desenvolvimento integral da criança na cidade de Salvador.">
 
-        <!-- links and scripts -->
+        <!--* links and scripts -->
         <link rel="stylesheet" href="src/css/main.css">
         <script type="module" src="src/scripts/main.js" defer></script>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     </head>
-    <body>
-        <div class="bg_openMenu" aria-hidden="true">
-            <!-- ? this div only shows when the mobile menu is opened 
-             ? and it has glass effect -->
-        </div>
+    <body class="relative max-w-[1400px] flex flex-col items-center justify-center m-auto">
 
-       <header class="headerPage" id="home">
-        <a href="#home" aria-label="Página inicial da Aurora">
-            <img src="" alt="Logo da Escola Aurora" srcset="">
-            <!-- TODO: add logos images on document -->
-        </a>
+        <div id="pageBg" aria-hidden="true" class="absolute w-[0] h-[0] bg-gray/90 z-20
+        backdrop-blur-[2.5px] duration-500 ease-in-out" ></div>
+        
+        <header id="home" 
+         class="flex items-center justify-between px-8 py-4 w-full h-fit relative">
+            <a href="#home" aria-label="Ir para páginainicial">
+                <img src="src/assets/pngs/logo_default.png" alt="Logo da Escola Aurora"
+                class="p-2 max-w-32 min-w-1/2 w-full"
+                >
+            </a>
 
-        <!--? MOBILE NAVIGATION -->
-        <nav class="mobileContainer">
-            <button class="mobileMenu_btn" type="button" aria-label="Abrir menu de navegação">
-                <img src="src/assets/svgs/list.svg" alt="" aria-hidden="true">
-            </button>
+            <nav 
+            class="flex items-center justify-end flex-grow ">
 
-            <ul class="mobileMenu">
-                <li><a class="mobileItem" href="#home" aria-label="Página inicial da Aurora">Início</a></li>
-                <li><a class="mobileItem" href="#about" aria-label="História da Escola Aurora">Sobre nós</a></li>
-                <li><a class="mobileItem" href="#educational_approach" aria-label="Proposta pedagógica da Aurora">Proposta Pedagógica</a></li>
-                <li><a class="mobileItem" href="#testimonials" aria-label="Depoimentos de pais de alunos da Aurora">Depoimentos</a></li>
-                <li><a class="mobileItem" href="#contact" aria-label="Seção de contato com a Escola Aurora">Contato</a></li>
+            <!--* desktop navigation -->
+            <ul class="hidden lg:flex gap-[1.5rem] items-center justify-end w-full mr-[8rem] text-nowrap">
                 <li>
-                    <ul class="mobileMenu_footer" aria-label="Redes sociais da Aurora">
-                        <li class="socialIcons_container">
-                            <button class="mobile_socialItem socialButton" aria-label="Facebook" value="facebook">
-                                <img src="src/assets/svgs/facebook.svg" alt="Facebook">
-                            </button>
+                    <a href="#home" 
+                        class="p-2 rounded-lg
+                        hover:bg-[--yellowHover] duration-300 ease-in-out
+                        hover:text-[--textColor] duration-300 ease-in-out">
+                        Início
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#approach"
+                        class="p-2 rounded-lg
+                        hover:bg-[--yellowHover] duration-300 ease-in-out
+                        hover:text-[--textColor] duration-300 ease-in-out">
+                        Proposta Pedagógica
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#testimonials"
+                        class="p-2 rounded-lg
+                        hover:bg-[--yellowHover] duration-300 ease-in-out
+                        hover:text-[--textColor] duration-300 ease-in-out">
+                        Depoimentos
+                    </a>
+                </li>
+
+                <li x-data="{open: false}"
+                    class="relative">
+                    <p @click="open = !open"
+                    class=" p-2 flex items-center justify-between gap-[.5rem] cursor-pointer rounded-lg
+                    hover:text-stone-500 duration-300 ease-in-out"> 
+                        Redes Sociais 
+                        <img src="src/assets/svgs/chevron-down.svg" alt="seta" aria-hidden="true"
+                            :class="{ 'rotate-180': open}"
+                            class="transition-transform duration-500 ease-in-out">
+                    </p>
+                    <ul x-show="open"
+                        class="flex-col p-2 gap-[1.5rem] absolute bottom-[-260%] left-0 w-full bg-[--whiteBg] shadow-md rounded-b-sm
+                        lg:text-sm xl:text-md"
+                        x-transition class="duration-700 ease-in-out">
+                        <li role="button" aria-label="Abrir facebook da Aurora" name="socialItemDesktop" value="facebook"
+                        class="flex items-center justify-between p-2 border-b-2 border-b-gray-200 cursor-pointer
+                        hover:bg-[--yellowHover] duration-300 ease-in-out">
+                            <p>Facebook</p>
+                            <img src="src/assets/svgs/facebook.svg" alt="">
                         </li>
-                        <li class="socialIcons_container">
-                            <button class="mobile_socialItem socialButton" aria-label="Instagram" value="instagram">
-                                <img src="src/assets/svgs/instagram.svg" alt="Instagram" >
-                            </button>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav> <!--? END OF MOBILE NAVIGATION -->
-
-        <!--? DESKTOP NAVIGATION -->
-        <nav class="desktopContainer">
-            <ul class="desktopMenu">
-                <li>
-                    <a class="desktopItem" href="#home" aria-label="Início da página da Aurora">Início</a>
-                </li>
-                <li>
-                    <a class="desktopItem" href="#about" aria-label="Sobre a Escola Aurora">Sobre</a>
-                </li>
-                <li>
-                    <a class="desktopItem" href="#educational_approach" aria-label="Proposta Pedagógica da Aurora">Proposta Pedagógica</a>
-                </li>
-                <li>
-                    <a class="desktopItem" href="#testimonials" aria-label="Depoimentos de pais dos alunos da Aurora">Depoimentos</a>
-                </li>
-                <li>
-                    <button class="button_primary desktopMenuButton ctaButton" value="contact" type="button" aria-label="Contato com a Aurora">Contato</button>
-                </li>
-            </ul>
-
-            <ul class="desktop_socials" aria-label="Redes sociais da Aurora">
-                <li class="socialItem">
-                    <button class="socialButton" value="facebook" aria-label="Facebook da Aurora">
-                        <img src="src/assets/svgs/facebook.svg" alt="Ícone Facebook" srcset="">
-                    </button>
-                </li>
-                <li class="socialItem">
-                    <button class="socialButton" value="instagram" aria-label="Instagram da Aurora">
-                        <img src="src/assets/svgs/instagram.svg" alt="Ícone Instagram">
-                    </button>
-                </li>
-            </ul>
-        </nav>
-       </header> 
-
-       <main>
-        <section class="heroSection">
-            <section class="contentHero">
-                <h1>O primeiro passo para um<br> amanhã
-                    <span class="underlined">
-                        brilhante
-                        <img src="src/assets/svgs/underline.svg" alt="" aria-hidden="true">
-                    </span>
-                </h1>
-                <p class="heroText">Afeto, segurança e excelência para os primeiros passos rumo a um futuro cheio de possibilidades.</p>
-                <nav class="ctasContainer">
-                    <ul>
-                        <li>
-                            <button class="button_secondary ctaButton" value="about" aria-label="Saber mais sobre a Aurora">Conheça a Aurora</button>
-                        </li>
-                        <li>
-                            <button class="button_primary ctaButton" value="contact" aria-label="Agendar uma visita no formulário">Agendar visita</button>
+                        <li role="button" aria-label="Abrir instagram da Aurora" name="socialItemDesktop" value="instagram"
+                        class="flex items-center justify-between p-2 border-b-2 border-b-gray-200 cursor-pointer mt-4
+                        hover:bg-[--yellowHover] duration-300 ease-in-out">
+                            <p>Instagram</p>
+                            <img src="src/assets/svgs/instagram.svg" alt="">
                         </li>
                     </ul>
-                </nav>
-            </section> <!-- content hero section -->
+                </li>
+            </ul>
 
-            <section class="imageHero">
-                <img src="src/assets/pngs/kid.png" alt="Aluno da Aurora">
-                <img src="src/assets/svgs/abc.svg" alt="" srcset="" aria-hidden="true">
-                <img src="src/assets/svgs/equals.svg" alt="" srcset="" aria-hidden="true">
-                <img src="src/assets/svgs/minus.svg" alt="" srcset="" aria-hidden="true">
-                <img src="src/assets/svgs/plus.svg" alt="" srcset="" aria-hidden="true">
-                <!--TODO: pegar a imagem do circulo amarelo -->
+            <!--* mobile and tablet navigation -->
+                <a href="#contact"
+                    class="flex py-2 px-8 bg-[--yellow] rounded-lg font-semibold
+                    hover:bg-[--yellowHover] duration-300 ease-in-out hover:text-gray-800 duration-300 ease-in-out
+                    hidden md:flex mr-[4rem] text-sm lg:mr-[0] text-lg">
+                    Contato
+                    </a>
 
-            </section>
-        </section> <!--? end of hero section -->
+                <button class=" flex rounded-full lg:hidden justify-self-end-end
+                hover:opacity-60 duration-300 ease-in-out"
+                aria-label="Abrir menu" aria-controls="menuMobile" id="openMenu">
+                    <img src="src/assets/svgs/list.svg" alt=""
+                    class="p-2 size-[2.5rem]">
+                </button>
 
-        <div class="divisorSections" aria-hidden="true">
-            <img src="src/assets/svgs/divisor.svg" alt="" srcset="" aria-hidden='true'>
-        </div>
+                <ul aria-label="Menu" aria-expanded="false" id="menuMobile"
+                class="flex-column items-start gap-[.5rem] lg:hidden absolute top-0 right-0 w-0 h-0 bg-gray-100
+                  rounded-t-[1.5rem] rounded-l-[1.5rem] overflow-hidden z-30 duration-500 ease-in-out">
+                    <li class="w-full flex mt-[1rem] hover:bg-[--yellowHover] duration-300 ease-in-out" id="closeMenu" role="button" aria-label="Fechar menu" aria-controls="menuMobile">
+                        <img src="src/assets/svgs/chevron-down.svg" alt="Sair do menu"
+                        class="flex p-2 rotate-90">
+                    </li>
 
-        <section class="aboutSection" id="about">
-            <section class="aboutContent">
-                <header class="sectionHeader">
-                    <h3>Sobre nós</h3>
+                    <li class="w-full flex hover:bg-[--yellowHover] duration-300 ease-in-out">
+                        <a href="#home" aria-label="Ir para página inicial" name="menuItem" class="p-2 w-full">Início</a>
+                    </li>
+
+                    <li class="w-full flex hover:bg-[--yellowHover] duration-300 ease-in-out">
+                        <a href="#about" aria-label="Ir para seção sobre" name="menuItem" class="p-2 w-full">Sobre</a>
+                    </li>
+
+                    <li class="w-full flex hover:bg-[--yellowHover] duration-300 ease-in-out">
+                        <a href="#approach" aria-label="Ir para proposta pedagógica" name="menuItem" class="p-2 w-full">Proposta pedagógica</a>
+                    </li>
+
+                    <li class="w-full flex hover:bg-[--yellowHover] duration-300 ease-in-out">
+                        <a href="#testimonials" aria-label="Ir para depoimentos" name="menuItem" class="p-2 w-full">Depoimentos</a>
+                    </li>
+
+                    <li class="w-full flex hover:bg-[--yellowHover] duration-300 ease-in-out">
+                        <a href="#contact" aria-label="Ir para contato" name="menuItem" class="p-2 w-full">Contato</a>
+                    </li>
+
+                    <li class="w-full flex items-center justify-start gap-[1rem] p-2 mt-[1rem]">
+                        <img src="src/assets/svgs/facebook.svg" alt="Facebook" name="socialItem" value="facebook" role="button" aria-label="Abrir facebook da Aurora"
+                        class="size-[1.8rem] hover:opacity-45 duration-300 ease-in-out">
+                        <img src="src/assets/svgs/instagram.svg" alt="Instagram" name="socialItem" value="instagram" role="button" aria-label="Abrir instagram da Aurora"
+                        class="size-[1.8rem] hover:opacity-45 duration-300 ease-in-out">
+                    </li>
+                    
+                    
+
+                    
+                </ul>
+
+                
+            </nav>
+        </header>
+
+        <!--* main content -->
+
+        <main class=" w-full pt-[2rem] border border-gray-900">
+
+            <!--* hero section -->
+            <section class=" w-full px-4 flex
+            sm: flex-col gap-[3rem]
+            md:flex-row items-stretch justify-between">
+
+                <!-- content of hero section -->
+                 <section class=" flex flex-col items-center w-full
+                        sm:w-full gap-[.5rem]
+                        md:max-w-[50%]">
+                    <h1 class="font-semibold text-3xl text-center
+                        md:text-3xl text-center
+                        lg:text-4xl text-start
+                        xl:text-5xl text-start">O primeiro passo para um amanhã
+                        <span class="font-semibold font-[--titleFont] text-[--textColor] inline-flex flex-col w-min justify-self-center">
+                            brilhante
+                            <img src="src/assets/svgs/underline.svg" alt="" aria-hidden="true"
+                                class="flex w-full">
+                        </span>
+                    </h1>
+                    <p class="text-base mb-[2rem]
+                    sm:text-start text-lg
+                    md:text-start ">
+                        Afeto, segurança e excelência para os primeiros passos rumo a um futuro cheio de possibilidades.
+                    </p>
+
+                    <nav aria-label="Navegação da página" 
+                        class="flex w-full gap-[1rem] font-semibold flex-wrap
+                        lg:flex-row mt-auto">
+
+                        <a href="#about" role="button" aria-label="Ir para seção de sobre"
+                            class="border-2 border-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
+                            hover:bg-[--yellowHover] duration-300 ease-in-out
+                            hover:text-gray-800 duration-300 ease-in-out
+                            md:w-full lg:w-fit text-sm"
+                            >
+                            Conheça a Aurora
+                        </a>
+
+                        <a href="#contact" role="button" aria-label="Ir para seção de contato"
+                            class="border-2 border-[--yellow] bg-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
+                            hover:bg-[--yellowHover] duration-300 ease-in-out
+                            hover:text-gray-800 duration-300 ease-in-out
+                            md:w-full lg:w-fit text-sm">
+                            Agendar visita
+                        </a>
+
+                    </nav>
+                 </section>
+
+                 <!-- image of hero section -->
+                  <section class="relative sm:w-full md:w-[45%]">
+                    <div class="relative flex justify-center">
+                        <img src="src/assets/pngs/kid.png" alt="Aluno da Aurora" lazy-load
+                            class="w-full lg:w-[60%]">
+                        <img src="src/assets/svgs/yellow_border.svg" alt=""
+                            class="absolute top-0 left-0[50%] w-full 
+                            lg:w-[60%]">
+                    </div>
+
+                    <div aria-hidden="true" 
+                    class="absolute top-0">
+                        <img src="src/assets/svgs/abc.svg" alt="">
+                    </div>
+
+                    <div aria-hidden="true" 
+                    class="absolute bottom-0 right-0" >
+                        <img src="src/assets/svgs/equals.svg" alt="">
+                        <img src="src/assets/svgs/plus.svg" alt="">
+                        <img src="src/assets/svgs/minus.svg" alt="">
+                    </div>
+                    
+                  </section>
+            </section> <!--* end of hero section -->
+
+            <div aria-hidden="true" class="flex w-full mt-[2rem] mb-[1rem] opacity-45">
+                <img src="src/assets/svgs/divisor.svg" alt="" class="w-full">
+            </div>
+
+            <!--* about section -->
+            <section id="about" class="px-4 py-8 w-full border-2 border-red-600">
+                <header class="relative flex w-full">
+                    <section class="z-10 flex flex-col gap-2">
+                        <h3 class="subtitle">Sobre nós</h3>
+                        <h2 class="font-semibold text-xl
+                            md:text-2xl
+                            lg:text-3xl">
+                            Aqui educar é iluminar <br>futuros
+                        </h2>
+                    </section>
+
+                    <section aria-hidden="true" class="hidden md:flex">
+                        <img src="src/assets/svgs/sun.svg" alt=""
+                        class="absolute right-0 opacity-45
+                        lg:top-0 w-[24rem] border border-blue-500">
+                    </section>
                 </header>
 
-                <h2>Aqui educar é iluminar <br>futuros</h2>
-                <p>
-                    Na Aurora, acreditamos que cada criança é única e deve ser acolhida com
-                    afeto, respeito e segurança. Nossa missão é despertar o potencial de cada
-                    pequeno, estimulando curiosidade, autonomia e valores humanos desde os
-                    primeiros passos. Com uma equipe dedicada, espaços planejados e uma abordagem
-                    pedagógica humanizada, cultivamos um ambiente onde aprender é também crescer,
-                    sonhar e se sentir amado todos os dias.
-                </p>
-            </section>
+                <!-- content about -->
+                 <p class="flex w-full mt-2 text-base
+                    sm: text-sm
+                    md:max-w-[50%] text-md 
+                    lg:text-lg">
+                    Na Aurora, acreditamos que cada criança é única e deve ser acolhida com afeto,
+                    respeito e segurança. Nossa missão é despertar o potencial de cada pequeno, estimulando
+                    curiosidade, autonomia e valores humanos desde os primeiros passos. Com uma equipe dedicada,
+                    espaços planejados e uma abordagem pedagógica humanizada, cultivamos um ambiente onde aprender
+                    é também crescer, sonhar e se sentir amado todos os dias.
+                 </p>
 
-            <section class="aboutImage">
-                <img src="src/assets/pngs/class about.png" alt="Classe de uma turma da Aurora">
-            </section>
+                 <!-- values -->
+                 <section class="flex flex-col gap-4 mt-10 mb-10">
+                    <h3 class="text-base flex flex-col w-min font-semibold text-nowrap">
+                        Nossos valores 
+                        <img src="src/assets/svgs/underline.svg" aria-hidden="true" alt=""
+                        class="flex w-full">
+                    </h3>
 
-            <section class="aboutValues">
-                <h3 class="subtitleBlack">
-                    Nossos valores
-                    <img src="src/assets/svgs/underline.svg" alt="" aria-hidden="true">
-                </h3>
+                    <!-- dropdowns-->
+                    <section 
+                        class="flex gap-4 w-full flex-col 
+                        md:flex-row flex-wrap">
+                        <article class="flex flex-col flex-auto border-2 border-[--yellow] rounded-xl overflow-hidden w-full 
+                                md:max-w-[45%]"
+                                x-data="{open: false}">
+                            <header role="button" aria-label="Abrir conteúdo"
+                                 @click="open = !open"
+                                class="flex items-center justify-between gap-4 w-full p-3 
+                            hover:bg-[--light_gray] duration-300 ease-in-out">
+                                <h4 class="text-sm font-[550] text-nowrap md:text-base lg:text-md">
+                                    Compromisso com a Infância
+                                </h4>
+                                <img src="src/assets/svgs/chevron-down.svg" alt=""
+                                aria-hidden="true" 
+                                :class="{'rotate-180': open}"
+                                class="transition-transform duration-500 ease-in-out">
+                            </header>
+                            <main x-show="open" 
+                                class="">
+                                <p class="p-2 text-sm sm:text-md">
+                                    Valorizamos cada etapa do desenvolvimento, respeitando o ritmo único de cada criança e
+                                    celebrando suas conquistas com sensibilidade
+                                </p>
+                            </main>
+                        </article>
 
-                <section class="valuesContainer">
-                    <article class="valueContainer">
-                        <button class="valueButton" aria-label="Abrir conteúdo" aria-controls="content_dropdown">
-                            Título do dropdown
-                            <img src="src/assets/svgs/chevron-down.svg" aria-hidden="true" class="valueIcon">
-                        </button>
+                        <article class="flex flex-col flex-auto border-2 border-[--yellow] rounded-xl overflow-hidden w-full 
+                                md:max-w-[45%]"
+                                x-data="{open: false}">
+                            <header role="button" aria-label="Abrir conteúdo"
+                                @click="open = !open"
+                                class="flex items-center justify-between gap-4 w-full p-3 
+                                    hover:bg-[--light_gray] duration-300 ease-in-out">
+                                <h4 class="text-sm font-[550] text-nowrap md:text-base lg:text-md">
+                                    Ambiente acolhedor e seguro
+                                </h4>
+                                <img src="src/assets/svgs/chevron-down.svg" alt=""
+                                aria-hidden="true" 
+                                :class="{'rotate-180': open}"
+                                class="transition-transform duration-500 ease-in-out">
+                            </header>
+                            <main x-show="open" 
+                                class="">
+                                <p class="p-2 text-sm sm:text-md">
+                                    Cultivamos um ambiente seguro e afetuoso, no qual cada criança
+                                    se sente bem-vinda, cuidada e livre para se expressar
+                                </p>
+                            </main>
+                        </article>
 
-                        <p class="valueContent" aria-expanded="false" id="content_dropdown">
-                            Valorizamos cada etapa do desenvolvimento, respeitando o ritmo único de
-                            cada criança e celebrando suas conquistas com sensibilidade
-                        </p>
-                    </article>
-                </section>
+                        <article class="flex flex-col flex-auto border-2 border-[--yellow] rounded-xl overflow-hidden w-full 
+                                md:max-w-[45%]"
+                                x-data="{open: false}">
+                            <header role="button" aria-label="Abrir conteúdo"
+                                @click="open = !open"
+                                class="flex items-center justify-between gap-4 w-full p-3 
+                                    hover:bg-[--light_gray] duration-300 ease-in-out">
+                                <h4 class="text-sm font-[550] text-nowrap md:text-base lg:text-md">
+                                    Excelência Pedagógica
+                                </h4>
+                                <img src="src/assets/svgs/chevron-down.svg" alt=""
+                                aria-hidden="true" 
+                                :class="{'rotate-180': open}"
+                                class="transition-transform duration-500 ease-in-out">
+                            </header>
+                            <main x-show="open" 
+                                class="">
+                                <p class="p-2 text-sm sm:text-md">
+                                    Oferecemos uma educação fundamentada em práticas pedagógicas
+                                    atualizadas, conduzida por profissionais comprometidos com o
+                                    desenvolvimento integral
+                                </p>
+                            </main>
+                        </article>
 
-                <nav class="ctasContainer">
-                    <ul>
-                        <li>
-                            <button class="button_secondary ctaButton" value="gallery" aria-label="Ver a galeria de imagens">Conheça nossa infraestrutura</button>
-                        </li>
-                        <li>
-                            <button class="button_primary ctaButton" value="contact" aria-label="Agendar uma visita no formulário">Agendar visita</button>
-                        </li>
-                    </ul>
-                </nav>
-            </section>
-        </section> <!--? end of about section -->
+                        <article class="flex flex-col flex-auto border-2 border-[--yellow] rounded-xl overflow-hidden w-full 
+                                md:max-w-[45%]"
+                                x-data="{open: false}">
+                            <header role="button" aria-label="Abrir conteúdo"
+                                @click="open = !open"
+                                class="flex items-center justify-between gap-4 w-full p-3 
+                                    hover:bg-[--light_gray] duration-300 ease-in-out">
+                                <h4 class="text-sm font-[550] text-nowrap md:text-base lg:text-md">
+                                    Transparência nas relações
+                                </h4>
+                                <img src="src/assets/svgs/chevron-down.svg" alt=""
+                                aria-hidden="true" 
+                                :class="{'rotate-180': open}"
+                                class="transition-transform duration-500 ease-in-out">
+                            </header>
+                            <main x-show="open" 
+                                class="">
+                                <p class="p-2 text-sm sm:text-md">
+                                    Mantemos uma comunicação clara e constante com as famílias,
+                                    fortalecendo a confiança e parceria na jornada educacional
+                                </p>
+                            </main>
+                        </article>
 
-        <div class="divisorSections" aria-hidden="true">
-            <img src="src/assets/svgs/divisor.svg" alt="" srcset="" aria-hidden='true'>
-        </div>
+                        <article class="flex flex-col flex-auto border-2 border-[--yellow] rounded-xl overflow-hidden w-full 
+                                md:max-w-[45%]"
+                                x-data="{open: false}">
+                            <header role="button" aria-label="Abrir conteúdo"
+                                @click="open = !open"
+                                class="flex items-center justify-between gap-4 w-full p-3 
+                                    hover:bg-[--light_gray] duration-300 ease-in-out">
+                                <h4 class="text-sm font-[550] text-nowrap md:text-base lg:text-md">
+                                    Conduta Ética e Responsável
+                                </h4>
+                                <img src="src/assets/svgs/chevron-down.svg" alt=""
+                                aria-hidden="true" 
+                                :class="{'rotate-180': open}"
+                                class="transition-transform duration-500 ease-in-out">
+                            </header>
+                            <main x-show="open" 
+                                class="">
+                                <p class="p-2 text-sm sm:text-md">
+                                    Atuamos com responsabilidade, respeito e integridade em todas as nossas decisões,
+                                    priorizandoo bem-estar das crianças, famílias e equipe
+                                </p>
+                            </main>
+                        </article>
 
-        <section class="educationalSection" id="education_approach">
-            <header class="sectionHeader">
-                <h3>Proposta Pedagógica</h3>
-            </header>
+                    </section>
+                 </section>
 
-            <section class="educationalContent">
-                <h2>Como cultivamos o <br>aprender com o afeto</h2>
-                <p>
-                    Crescer com confiança, brincar com liberdade e aprender com alegria: assim
-                    guiamos cada etapa do desenvolvimento infantil na Aurora. Nossa proposta
-                    pedagógica integra afeto, segurança e estímulos criativos para promover o
-                    desenvolvimento integral — emocional, social, cognitivo e motor — respeitando
-                    a singularidade de cada criança. Em um ambiente acolhedor e inspirador,
-                    incentivamos a curiosidade, a autonomia e a construção de valores que iluminam
-                    os primeiros passos rumo ao futuro.
-                </p>
-            </section>
+                 <!-- ctas -->
+                <nav aria-label="Navegação da página" 
+                        class="flex w-full gap-[1rem] font-semibold flex-wrap
+                        lg:flex-row mt-auto">
 
-            <section class="educationalImage">
-                <img src="src/assets/svgs/sun.svg" alt="" aria-hidden="true">
-                <img src="src/assets/svgs/hat.svg" alt="" aria-hidden="true">
-                <img src="src/assets/svgs/board.svg" alt="" aria-hidden="true">
-            </section>
+                        <a href="#about" role="button" aria-label="Ir para seção de sobre"
+                            class="border-2 border-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
+                            hover:bg-[--yellowHover] duration-300 ease-in-out
+                            hover:text-gray-800 duration-300 ease-in-out
+                            md:w-full lg:w-fit text-sm"
+                            >
+                            Conheça a Aurora
+                        </a>
 
-            <section class="principlesSection">
-                <h3 class="subtitleBlack">
-                    Princípios norteadores
-                    <img src="src/assets/svgs/underline.svg" alt="" aria-hidden="true">
-                </h3>
+                        <a href="#contact" role="button" aria-label="Ir para seção de contato"
+                            class="border-2 border-[--yellow] bg-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
+                            hover:bg-[--yellowHover] duration-300 ease-in-out
+                            hover:text-gray-800 duration-300 ease-in-out
+                            md:w-full lg:w-fit text-sm">
+                            Agendar visita
+                        </a>
 
-                <section class="principlesContainer">
-                    <article class="principle">
-                        <aside class="numberArticle"></aside>
-                        <section class="contentArticle">
-                            <h4>Article Title</h4>
-                            <p>Article content</p>
-                        </section>
-                    </article>
-                </section>
-            </section>
-
-            <nav class="ctasContainer">
-                    <ul>
-                        <li>
-                            <button class="button_secondary ctaButton" value="gallery" aria-label="Ver a galeria de imagens">Conheça nossa infraestrutura</button>
-                        </li>
-                        <li>
-                            <button class="button_primary ctaButton" value="contact" aria-label="Agendar uma visita no formulário">Agendar visita</button>
-                        </li>
-                    </ul>
-                </nav>
-        </section> <!--? principles section end-->
-
-        <section class="gallerySection">
-            <button class="galleryButton" aria-label="Imagem anterior" value="prev">
-                prev
-                <img src="src/assets/svgs/chevron-down.svg" alt="" aria-hidden="true">
-            </button>
-
-            <button class="galleryButton" aria-label="Próxima imagem" value="next">
-                next
-                <img src="src/assets/svgs/chevron-down.svg" alt="" aria-hidden="true">
-            </button>
-
-            <div class="galleryWrapper">
-                <img src="src/assets/pngs/toys.png" alt="Brinquedos usados em sala de aula" class="image_gallery">
-                <img src="src/assets/pngs/class activity.png" alt="Atividade de classe" class="image_gallery">
-                <img src="src/assets/pngs/school outdoor.png" alt="Quadra da escola" class="image_gallery">
-                <img src="src/assets/pngs/class presentation.png" alt="Apresentação em sala" class="image_gallery">
-            </div>
-        </section> <!--? end of educational -->
-
-
-        <div class="divisorSections" aria-hidden="true">
-            <img src="src/assets/svgs/divisor.svg" alt="" srcset="" aria-hidden='true'>
-        </div>
-
-
-        <section class="testimonialsSection" id="testimonials">
-            <header class="sectionHeader">
-                <h3>Depoimentos</h3>
-            </header>
-
-            <h2>Palavras de quem confia <br> no nosso trabalho</h2>
-
-            <section class="testimonialsContainer">
-                <article class="testimonialArticle">
-                    <h4>Nome da mae</h4>
-                    <p>Depoimento da mae</p>
-                    <div class="rating">
-
-                    </div>
-                </article>
+                    </nav>
                 
-            </section> <!--? end of testimonial section -->
-        </section>
+            </section> <!--* end of about section-->
 
-        <div class="divisorSections" aria-hidden="true">
-            <img src="src/assets/svgs/divisor.svg" alt="" srcset="" aria-hidden='true'>
-        </div>
+            <div aria-hidden="true" class="flex w-full mt-[2rem] mb-[1rem] opacity-45">
+                <img src="src/assets/svgs/divisor.svg" alt="" class="w-full">
+            </div>
 
-        <section class="contactSection" id="contact">
-            <header class="sectionHeader">
-                <h3>Contato</h3>
-            </header>
+            <!--* educational approach section -->
+            <section id="approach">
 
-            <section class="contactContent">
-                <h2>Estamos prontos para<br> acolher a sua familia</h2>
-                <p>Tire suas dúvidas, agende uma visita ou converse com nossa equipe.
-                    Estamos à disposição para apresentar cada detalhe e mostrar como a Aurora
-                    pode ser o início de uma linda jornada para o seu filho.</p>
-            </section>
+            </section> <!--* end of approach-->
+        </main>
 
-            <form action="" class="formContainer">
-                <label for="name">
-                    Nome
-                    <input type="text" name="name" id="name">
-                    <span class="errorName"></span>
-                </label>
-                <label for="name">
-                    Email
-                    <input type="email" name="email" id="email">
-                    <span class="errorEmail"></span>
-                </label>
-
-                <label for="name">
-                    Assunto da conversa
-
-                    <select name="object" id="objectEmail">
-                        <option value="">Selecionar assunto</option>
-                        <option value="Dúvidas">Dúvidas Gerais</option>
-                        <option value="Agendar Visita">Agendar Visita</option>
-                        <option value="Matrícula">Matrícula</option>
-                        <option value="Retorno">Solicitar retorno da equipe</option>
-                        <option value="Feedback">Sugestão ou feedback</option>
-                        <option value="Outros">Outros</option>
-                    </select>
-                    <span class="errorObject"></span>
-                </label>
-
-                <button class="button_primary formButton">Enviar menssagem</button>
-            </form>
-        </section>
-       </main>
-
-       <footer>
         
-       </footer>
     </body>
 </html>
