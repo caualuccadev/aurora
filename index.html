@@ -37,8 +37,7 @@
                 <li>
                     <a href="#home" 
                         class="p-2 rounded-lg
-                        hover:bg-[--yellowHover] duration-300 ease-in-out
-                        hover:text-[--textColor] duration-300 ease-in-out">
+                        hover:text-[--blue] duration-300 ease-in-out">
                         Início
                     </a>
                 </li>
@@ -46,8 +45,7 @@
                 <li>
                     <a href="#approach"
                         class="p-2 rounded-lg
-                        hover:bg-[--yellowHover] duration-300 ease-in-out
-                        hover:text-[--textColor] duration-300 ease-in-out">
+                        hover:text-[--blue] duration-300 ease-in-out">
                         Proposta Pedagógica
                     </a>
                 </li>
@@ -55,24 +53,24 @@
                 <li>
                     <a href="#testimonials"
                         class="p-2 rounded-lg
-                        hover:bg-[--yellowHover] duration-300 ease-in-out
-                        hover:text-[--textColor] duration-300 ease-in-out">
+                        hover:text-[--blue] duration-300 ease-in-out">
                         Depoimentos
                     </a>
                 </li>
 
                 <li x-data="{open: false}"
-                    class="relative">
+                    class="relative" class="">
                     <p @click="open = !open"
-                    class=" p-2 flex items-center justify-between gap-[.5rem] cursor-pointer rounded-lg
-                    hover:text-stone-500 duration-300 ease-in-out"> 
+                    class="group p-2 flex items-center justify-between gap-[.5rem] cursor-pointer rounded-lg
+                        hover:text-[--blue] duration-300 ease-in-out"> 
                         Redes Sociais 
                         <img src="src/assets/svgs/chevron-down.svg" alt="seta" aria-hidden="true"
                             :class="{ 'rotate-180': open}"
-                            class="transition-transform duration-500 ease-in-out">
+                            class=" transition-transform duration-500 ease-in-out 
+                                group-hover:opacity-45 duration-300 ease-in-out">
                     </p>
                     <ul x-show="open"
-                        class="flex-col p-2 gap-[1.5rem] absolute bottom-[-260%] left-0 w-full bg-[--whiteBg] shadow-md rounded-b-sm
+                        class="flex-col p-2 gap-[1.5rem] absolute bottom-[-260%] left-0 w-full bg-[--whiteBg] shadow-md rounded-b-sm z-20
                         lg:text-sm xl:text-md"
                         x-transition class="duration-700 ease-in-out">
                         <li role="button" aria-label="Abrir facebook da Aurora" name="socialItemDesktop" value="facebook"
@@ -94,7 +92,9 @@
             <!--* mobile and tablet navigation -->
                 <a href="#contact"
                     class="flex py-2 px-8 bg-[--yellow] rounded-lg font-semibold
-                    hover:bg-[--yellowHover] duration-300 ease-in-out hover:text-gray-800 duration-300 ease-in-out
+                    hover:bg-[--blue] duration-300 ease-in-out
+                    hover:text-white duration-300 ease-in-out
+                    hover:border-[--blue] duration-300 ease-in-out
                     hidden md:flex mr-[4rem] text-sm lg:mr-[0] text-lg">
                     Contato
                     </a>
@@ -152,7 +152,7 @@
 
         <!--* main content -->
 
-        <main class=" w-full pt-[2rem] border border-gray-900 overflow-hidden">
+        <main class=" w-full pt-[2rem] overflow-hidden">
 
             <!--* hero section -->
             <section class=" w-full px-4 flex
@@ -249,7 +249,7 @@
                     <section aria-hidden="true" class="hidden md:flex">
                         <img src="src/assets/svgs/sun.svg" alt=""
                         class="absolute right-0 opacity-45
-                        lg:top-0 w-[24rem] border border-blue-500">
+                        lg:top-0 w-[24rem]">
                     </section>
                 </header>
 
@@ -647,7 +647,7 @@
 
                     <section aria-hidden="true" class="hidden md:flex">
                         <img src="src/assets/svgs/"  
-                        class="absolute right-0 opacity-45
+                        class="absolute right-0 opacity-45 z-[-1]
                         lg:top-0 w-[24rem] border border-blue-500" <!--! COLOCAR IMAGEM AQUI -->
                     </section>
                 </header>
@@ -773,34 +773,36 @@
                                 lg:w-1/3">
                     <label for="name" class="flex flex-col w-full gap-1">
                         Nome
-                        <input type="text" name="name" id="nameUser"
+                        <input type="text" name="name" id="nameUser" inputmode="latin" pattern="[a-zA-Z\s]+" required
+                            data-group="inputForm" data-event-type="blur" data-class="name"
                             class="border border-[--yellowHover] rounded-lg py-1 px-2 outline-none text-sm
                             focus:border-[--blue]">
-                        <p class="text-xs flex px-4 text-red-700">
-                            Mensagem de erro
+                        <p class="text-xs flex px-4 text-red-700" name="errorMessage" value="nameUser">
                         </p>
                     </label>
 
                     <label for="email" class="flex flex-col w-full gap-1">
                         Email
-                        <input type="email" name="email" id="emailUser"
+                        <input type="email" name="email" id="emailUser"  inputmode="email" required
+                            data-group="inputForm" data-event-type="blur" data-class="email"
                             class="border border-[--yellowHover] rounded-lg py-1 px-2 outline-none text-sm
                             focus:border-[--blue]">
-                        <p class="text-xs flex px-4 text-red-700">
-                            Mensagem de erro
+                        <p class="text-xs flex px-4 text-red-700" name="errorMessage" value="emailUser">
                         </p>
                     </label>
 
-                    <label for="name" class="flex flex-col w-full gap-1">
+                    <label for="" class="flex flex-col w-full gap-1">
                         Assunto
 
                         <div x-data="() => ({
                             openMenu: false,
                             value: 'Escolher assunto'
                         })" class="relative">
-                            <p @click=" openMenu = !openMenu "
+                            <p @click=" openMenu = !openMenu " id="subjectContainer"
                                 class="border border-[--yellowHover] rounded-lg py-1 px-2 flex justify-between text-sm cursor-pointer">
-                                <span  x-text="value" class="text-sm"></span>
+                                <span  x-text="value" class="text-sm"  name="subject"
+                                        data-group="inputForm" data-event-type="change" data-class="subject"
+                                        id="subjectUser" value="subjectUser"></span>
                                 <img src="src/assets/svgs/chevron-down.svg" alt="" aria-hidden="true"
                                     :class="{ 'rotate-180': openMenu }"
                                     class="transition-transform duration-300 ease-in-out">
@@ -811,67 +813,80 @@
                                 <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
                                     hover:text-[--blue] duration-300 ease-in-out
                                     hover:border-b-[--blue] duration-300 ease-in-out"
-                                    @click="value = $event.target.textContent; openMenu = false">
+                                    @click="value = $event.target.textContent; openMenu = false"
+                                    name="optionSubject">
                                     Dúvidas Gerais
                                 </li>
 
                                 <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
                                     hover:text-[--blue] duration-300 ease-in-out
                                     hover:border-b-[--blue] duration-300 ease-in-out"
-                                    @click="value = $event.target.textContent; openMenu = false">
+                                    @click="value = $event.target.textContent; openMenu = false"
+                                    name="optionSubject">
                                     Agendar visita
                                 </li>
 
                                  <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
                                     hover:text-[--blue] duration-300 ease-in-out
                                     hover:border-b-[--blue] duration-300 ease-in-out"
-                                    @click="value = $event.target.textContent; openMenu = false">
+                                    @click="value = $event.target.textContent; openMenu = false"
+                                    name="optionSubject">
                                     Matrículas
                                 </li>
                                 <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
                                     hover:text-[--blue] duration-300 ease-in-out
                                     hover:border-b-[--blue] duration-300 ease-in-out"
-                                    @click="value = $event.target.textContent; openMenu = false">
+                                    @click="value = $event.target.textContent; openMenu = false"
+                                    name="optionSubject">
                                     Disponibilidade de vagas
                                 </li>
                                 <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
                                     hover:text-[--blue] duration-300 ease-in-
                                     hover:border-b-[--blue] duration-300 ease-in-out"
-                                    @click="value = $event.target.textContent; openMenu = false">
+                                    @click="value = $event.target.textContent; openMenu = false"
+                                    name="optionSubject">
                                     Solicitar retorno da equipe
                                 </li>
                                 <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
                                     hover:text-[--blue] duration-300 ease-in-out
                                     hover:border-b-[--blue] duration-300 ease-in-out"
-                                    @click="value = $event.target.textContent; openMenu = false">
+                                    @click="value = $event.target.textContent; openMenu = false"
+                                    name="optionSubject">
                                     Sugestão ou feedback
                                 </li>
                                 <li class=" text-xs w-full py-1 px-2 border-b border-b-gray-200 bg-white cursor-pointer
                                     hover:text-[--blue] duration-300 ease-in-out
                                     hover:border-b-[--blue] duration-300 ease-in-out"
-                                    @click="value = $event.target.textContent; openMenu = false">
+                                    @click="value = $event.target.textContent; openMenu = false"
+                                    name="optionSubject">
                                     Outros
                                 </li>
                             </ul>
                         </div>
                         
-                        <p class="text-xs flex px-4 text-red-700">
-                            Mensagem de erro
+                        <p class="text-xs flex px-4 text-red-700" name="errorMessage" id="errorSubjectContainer">
                         </p>
                     </label>
 
-                    <label for="message" class="flex flex-col w-full gap-1">
-                        Mensagem
-                        <textarea name="message" id="messageUser" 
-                            class="border border-[--yellowHover] rounded-lg py-1 px-2 outline-none overflow-y-auto text-sm
-                            focus:border-[--blue]"></textarea>
-
-                        <p class="text-xs flex px-4 text-red-700">
-                            Mensagem de erro
+                    <div x-data="{counter: 0, typing: false, message: ''}">
+                        <label for="message" class="flex flex-col w-full gap-1">
+                            Mensagem
+                            <textarea name="message" id="messageUser" spellcheck="true" maxlength="100" required
+                                x-model="message"
+                                @input="typing = true; counter= message.length"
+                                class="border border-[--yellowHover] rounded-lg py-1 px-2 outline-none overflow-y-auto text-sm
+                                focus:border-[--blue]">
+                            </textarea>    
+                        </label>
+                         <p class="text-xs flex justify-end" name="errorMessage"
+                                x-show="typing" x-text="`${counter}/100`"
+                                :class="{'text-red-700': counter === 100}">
                         </p>
-                    </label>
+                        <p class="text-xs flex px-4 text-red-700 md:text-sm" name="errorMessage" value="messageUser">
+                        </p>
+                    </div>
 
-                    <button class="flex w-full bg-[--yellow] rounded-lg p-2 items-center justify-center font-semibold
+                    <button type="submit" id="formButton" class="flex w-full bg-[--yellow] rounded-lg p-2 items-center justify-center font-semibold
                                     hover:bg-[--blue] duration-300 ease-in-out
                                     hover:text-white duration-300 ease-in-out">
                         Enviar
@@ -880,6 +895,116 @@
             </section>
         </main>
 
+        <footer class="w-full bg-[--blue] flex flex-col p-4 gap-9
+                md:grid grid-cols-3">
+
+            <section class="w-full col-span-1 flex flex-col items-center justify-center
+                        md:items-start">
+                <img src="src/assets/pngs/logo_white.png" alt="Logo Escola Aurora"
+                    class="w-[55%] md:w-[65%] ">
+
+                <p class="flex w-full text-white text-xs text-center md:text-sm text-start">
+                    Educação com afeto, criatividade e propósito. Formando crianças para um mundo
+                    mais consciente e acolhedor.
+                </p>
+            </section>
+
+            <nav class="grid grid-cols-1 gap-7 items-start w-full col-span-1
+                    md:grid-cols-3 col-span-2 gap-4
+                    md:items-start justify-between">
+
+                <article class="">
+                    <h4 class="text-white text-sm font-semibold mb-2">
+                        Navegação
+                    </h4>
+
+                    <ul class="grid grid-cols-2 text-nowrap gap-2 items-start w-fit
+                        md:grid-cols-1">
+                        <li class=" px-4 w-fit text-white text-xs cursor-pointer
+                            hover:text-gray-400 duration-300 ease-in-out">
+                            <a href="#home">Início</a>
+                        </li>
+                        <li class="px-4 text-white text-xs cursor-pointer
+                            hover:text-gray-400 duration-300 ease-in-out">
+                            <a href="#about">Sobre</a>
+                        </li>
+                        <li class="px-4 text-white text-xs cursor-pointer
+                            hover:text-gray-400 duration-300 ease-in-out">
+                            <a href="#approach">Proposta Pedagógica</a>
+                        </li>
+                        <li class="px-4 text-white text-xs cursor-pointer
+                            hover:text-gray-400 duration-300 ease-in-out">
+                            <a href="#testimonials">Depoimentos</a>
+                        </li>
+                        <li class="px-4 text-white text-xs cursor-pointer
+                            hover:text-gray-400 duration-300 ease-in-out">
+                            <a href="./pages/gallery.html">Galeria</a>
+                        </li>
+                        <li class="px-4 text-white text-xs cursor-pointer
+                            hover:text-gray-400 duration-300 ease-in-out">
+                            <a href="#contact">Contato</a>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="">
+                    <h4 class="text-white text-sm font-semibold mb-2">
+                        Contato
+                    </h4>
+
+                    <ul class="grid grid-cols-2 text-nowrap gap-2 items-start w-fit
+                        md:grid-cols-1">
+                        <li class=" px-4 w-full text-white text-xs cursor-pointer
+                            hover:text-gray-400 duration-300 ease-in-out">
+                            <a href="https://www.facebook.com">Facebook</a>
+                        </li>
+                        <li class=" px-4 w-full text-white text-xs cursor-pointer
+                            hover:text-gray-400 duration-300 ease-in-out">
+                            <a href="https://www.instagram.com">Instagram</a>
+                        </li>
+                        <li class=" px-4 w-full text-white text-xs cursor-pointer
+                            hover:text-gray-400 duration-300 ease-in-out">
+                            <a href="" class="flex items-center justify-between gap-2"> 
+                                
+                                Email: contato@aurora.com
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+
+                <article class="">
+                    <h4 class="text-white text-sm font-semibold mb-2">
+                        Links
+                    </h4>
+
+                    <ul class="grid grid-cols-2 text-nowrap gap-2 items-start w-fit
+                        md:grid-cols-1">
+                        <li class=" px-4 w-full text-white text-xs cursor-pointer
+                            hover:text-gray-400 duration-300 ease-in-out">
+                            <a href="">Trabalhe conosco</a>
+                        </li>
+                        <li class=" px-4 w-full text-white text-xs cursor-pointer
+                            hover:text-gray-400 duration-300 ease-in-out">
+                            <a href="">Política de Cookies</a>
+                        </li>
+                        <li class=" px-4 w-full text-white text-xs cursor-pointer
+                            hover:text-gray-400 duration-300 ease-in-out">
+                            <a href="" class="flex items-center justify-between gap-2"> 
+                                
+                                Política de Privacidade
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+            </nav>
+
+            <section class="w-full h-fit py-4 flex flex-col gap-2 items-center justify-center m-0
+                    col-span-3">
+                <span x-data="{year: new Date().getFullYear()}" x-text="`© ${year}`" class="text-white">
+                </span>
+                <a href="" class="text-xs text-white md:text-sm">Desenvolvido por Cauã Lucca Guimarães</a>
+            </section>
+        </footer>
         
     </body>
 </html>
