@@ -125,17 +125,23 @@ const nameUser = document.getElementById('nameUser');
 const emailUser = document.getElementById('emailUser');
 const subjectUser = document.getElementById('subjectUser');
 const subjectContainer = document.getElementById('subjectContainer');
-const optionsSubject = document.getElementsByName('optionSubject')
-const buttonSubmit = document.getElementById('formButton')
+const buttonSubmit = document.getElementById('formButton');
+const form = document.getElementById('formContact');
+const modal = document.getElementById('modal')
+const buttonModal = document.getElementById('buttonModal');
 
 export function inputsValidation(){
+    let {nameStatus, emailStatus, subjectStatus} = false;
+
     nameUser.addEventListener('blur', (event) =>{
         let nameValue = event.target.value.trim();
 
         if(!regex.name.test(nameValue)){
             nameUser.className ='border-2 border-red-500 rounded-lg py-1 px-2 outline-none text-sm focus:border-[--blue]';
+            nameStatus = false;
         } else{
             nameUser.className ='border-2 border-green-500 rounded-lg py-1 px-2 outline-none text-sm focus:border-[--blue]';
+            nameStatus = true;
         }
     });
 
@@ -144,8 +150,10 @@ export function inputsValidation(){
 
         if(!regex.email.test(emailValue)){
             emailUser.className ='border-2 border-red-500 rounded-lg py-1 px-2 outline-none text-sm focus:border-[--blue]';
+            emailStatus = false;
         } else{
             emailUser.className ='border-2 border-green-500 rounded-lg py-1 px-2 outline-none text-sm focus:border-[--blue]';
+            emailStatus = true;
         }
     });
 
@@ -154,18 +162,31 @@ export function inputsValidation(){
 
         if(subjectValue == regex.subject){
             subjectContainer.className = 'border-2 border-red-600 rounded-lg py-1 px-2 flex justify-between text-sm cursor-pointer'
+            subjectStatus = false;
             event.preventDefault()
         } else{
             subjectContainer.className = 'border-2 border-green-600 rounded-lg py-1 px-2 flex justify-between text-sm cursor-pointer'
+            subjectStatus = true;
+
         }
     });
 
-    for(let index = 0; index < optionsSubject.length; index++){
-        optionsSubject[index].addEventListener('click', (event) =>{
-            subjectContainer.className = 'border-2 border-green-600 rounded-lg py-1 px-2 flex justify-between text-sm cursor-pointer'
-        })
-    }
+    form.addEventListener('submit', (event) =>{
+        if(!nameStatus || !emailStatus || !subjectStatus ){
+            event.preventDefault()
+            modal.className = "fixed inset-0 w-full h-full flex items-center justify-center bg-black-1/2 backdrop-blur-[4px] z-30"
+        } else{
+            modal.className = "hidden fixed inset-0 w-full h-full flex items-center justify-center bg-black-1/2 backdrop-blur-[4px] z-30";
+        }
+    });
     
-}
+    
+};
+
+export function closeModal(){
+    buttonModal.addEventListener('click', () =>{
+        form.removeChild(modal);
+    });
+};
 
 

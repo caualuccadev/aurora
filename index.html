@@ -12,11 +12,12 @@
         <link rel="stylesheet" href="src/css/main.css">
         <script type="module" src="src/scripts/main.js" defer></script>
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
         <script src="https://cdn.tailwindcss.com"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     </head>
-    <body class="relative max-w-[1400px] flex flex-col items-center justify-center m-auto">
+    <body class="relative max-w-[1400px] flex flex-col items-center justify-center m-auto overflow-x-hidden">
 
         <div id="pageBg" aria-hidden="true" class="absolute w-[0] h-[0] bg-gray/90 z-20
         backdrop-blur-[2.5px] duration-500 ease-in-out" ></div>
@@ -33,10 +34,11 @@
             class="flex items-center justify-end flex-grow ">
 
             <!--* desktop navigation -->
-            <ul class="hidden lg:flex gap-[1.5rem] items-center justify-end w-full mr-[8rem] text-nowrap">
+            <ul class="hidden lg:flex gap-[1.5rem] items-center justify-end w-full mr-[8rem] text-nowrap
+                ">
                 <li>
                     <a href="#home" 
-                        class="p-2 rounded-lg
+                        class="p-2 rounded-lg text-[clamp(.7rem, 4vw, 1rem)]
                         hover:text-[--blue] duration-300 ease-in-out">
                         Início
                     </a>
@@ -44,7 +46,7 @@
 
                 <li>
                     <a href="#about"
-                        class="p-2 rounded-lg
+                        class="p-2 rounded-lg text-[clamp(.7rem, 4vw, 1rem)]
                         hover:text-[--blue] duration-300 ease-in-out">
                         Sobre
                     </a>
@@ -52,7 +54,7 @@
 
                 <li>
                     <a href="#approach"
-                        class="p-2 rounded-lg
+                        class="p-2 rounded-lg text-[clamp(.7rem, 4vw, 1rem)]
                         hover:text-[--blue] duration-300 ease-in-out">
                         Proposta Pedagógica
                     </a>
@@ -66,16 +68,23 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="./pages/gallery.html"
+                        class="p-2 rounded-lg text-[clamp(.7rem, 4vw, 1rem)]
+                        hover:text-[--blue] duration-300 ease-in-out">
+                        Galeria
+                    </a>
+                </li>
+
                 <li x-data="{open: false}"
                     class="relative" class="">
                     <p @click="open = !open"
-                    class="group p-2 flex items-center justify-between gap-[.5rem] cursor-pointer rounded-lg
+                    class="group p-2 flex items-center justify-between gap-[.5rem] cursor-pointer rounded-lg text-[clamp(.7rem, 4vw, 1rem)]
                         hover:text-[--blue] duration-300 ease-in-out"> 
                         Redes Sociais 
-                        <img src="src/assets/svgs/chevron-down.svg" alt="seta" aria-hidden="true"
-                            :class="{ 'rotate-180': open}"
-                            class=" transition-transform duration-500 ease-in-out 
-                                group-hover:opacity-45 duration-300 ease-in-out">
+                        <i class="bi bi-chevron-down rotate-0 duration"
+                            :class="open ? 'transform rotate-180 transition duration-400 ease-in-out' : 'transform rotate-0 transition duration-400 ease-in-out' ">
+                        </i>
                     </p>
                     <ul x-show="open"
                         class="flex-col p-2 gap-[1.5rem] absolute bottom-[-260%] left-0 w-full bg-[--whiteBg] shadow-md rounded-b-sm z-20
@@ -117,9 +126,8 @@
                 <ul aria-label="Menu" aria-expanded="false" id="menuMobile"
                 class="flex-column items-start gap-[.5rem] lg:hidden absolute top-0 right-0 w-0 h-0 bg-gray-100
                   rounded-t-[1.5rem] rounded-l-[1.5rem] overflow-hidden z-30 duration-500 ease-in-out">
-                    <li class="w-full flex mt-[1rem] hover:bg-[--yellowHover] duration-300 ease-in-out" id="closeMenu" role="button" aria-label="Fechar menu" aria-controls="menuMobile">
-                        <img src="src/assets/svgs/chevron-down.svg" alt="Sair do menu"
-                        class="flex p-2 rotate-90">
+                    <li class="w-full flex mt-[1rem] hover:bg-[--yellowHover] duration-300 ease-in-out p-2" id="closeMenu" role="button" aria-label="Fechar menu" aria-controls="menuMobile">
+                        <i role="button" aria-label="Fechar menu" class="bi bi-x-lg"></i>
                     </li>
 
                     <li class="w-full flex hover:bg-[--yellowHover] duration-300 ease-in-out">
@@ -140,6 +148,10 @@
 
                     <li class="w-full flex hover:bg-[--yellowHover] duration-300 ease-in-out">
                         <a href="#contact" aria-label="Ir para contato" name="menuItem" class="p-2 w-full">Contato</a>
+                    </li>
+
+                    <li class="w-full flex hover:bg-[--yellowHover] duration-300 ease-in-out">
+                        <a href="./pages/gallery.html" aria-label="Ir para galeria" name="menuItem" class="p-2 w-full">Galeria</a>
                     </li>
 
                     <li class="w-full flex items-center justify-start gap-[1rem] p-2 mt-[1rem]">
@@ -238,7 +250,8 @@
                   </section>
             </section> <!--* end of hero section -->
 
-            <div aria-hidden="true" class="flex w-full mt-[2rem] mb-[1rem] opacity-45">
+            <div aria-hidden="true" class="flex w-full mt-[2rem] mb-[1rem] opacity-80 
+            md:opacity-60">
                 <img src="src/assets/svgs/divisor.svg" alt="" class="w-full">
             </div>
 
@@ -301,7 +314,7 @@
                                 class="transition-transform duration-500 ease-in-out">
                             </header>
                             <main x-show="open" 
-                                class="">
+                                x-transition>
                                 <p class="p-2 text-sm sm:text-md">
                                     Valorizamos cada etapa do desenvolvimento, respeitando o ritmo único de cada criança e
                                     celebrando suas conquistas com sensibilidade
@@ -325,7 +338,7 @@
                                 class="transition-transform duration-500 ease-in-out">
                             </header>
                             <main x-show="open" 
-                                class="">
+                                x-transition>
                                 <p class="p-2 text-sm sm:text-md">
                                     Cultivamos um ambiente seguro e afetuoso, no qual cada criança
                                     se sente bem-vinda, cuidada e livre para se expressar
@@ -349,7 +362,7 @@
                                 class="transition-transform duration-500 ease-in-out">
                             </header>
                             <main x-show="open" 
-                                class="">
+                                x-transition>
                                 <p class="p-2 text-sm sm:text-md">
                                     Oferecemos uma educação fundamentada em práticas pedagógicas
                                     atualizadas, conduzida por profissionais comprometidos com o
@@ -374,7 +387,7 @@
                                 class="transition-transform duration-500 ease-in-out">
                             </header>
                             <main x-show="open" 
-                                class="">
+                                x-transition>
                                 <p class="p-2 text-sm sm:text-md">
                                     Mantemos uma comunicação clara e constante com as famílias,
                                     fortalecendo a confiança e parceria na jornada educacional
@@ -398,7 +411,7 @@
                                 class="transition-transform duration-500 ease-in-out">
                             </header>
                             <main x-show="open" 
-                                class="">
+                                x-transition>
                                 <p class="p-2 text-sm sm:text-md">
                                     Atuamos com responsabilidade, respeito e integridade em todas as nossas decisões,
                                     priorizandoo bem-estar das crianças, famílias e equipe
@@ -414,7 +427,7 @@
                         class="flex w-full gap-[1rem] font-semibold flex-wrap
                         lg:flex-row mt-auto">
 
-                    <a href="pages/galeria.html" role="button" aria-label="Ir para seção de sobre"
+                    <a href="./pages/gallery.html" role="button" aria-label="Ir para seção de sobre"
                         class="border-2 border-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
                         hover:bg-[--blue] duration-300 ease-in-out
                         hover:text-white duration-300 ease-in-out
@@ -437,7 +450,8 @@
                 
             </section> <!--* end of about section-->
 
-            <div aria-hidden="true" class="flex w-full mt-[2rem] mb-[1rem] opacity-45">
+            <div aria-hidden="true" class="flex w-full mt-[2rem] mb-[1rem] opacity-80 
+                                    md:opacity-60">
                 <img src="src/assets/svgs/divisor.svg" alt="" class="w-full">
             </div>
 
@@ -474,7 +488,7 @@
                         class="flex w-full gap-[1rem] font-semibold flex-wrap
                         lg:flex-row mt-auto">
 
-                            <a href="pages/galeria.html" role="button" aria-label="Ir para seção de sobre"
+                            <a href="./pages/gallery.html" role="button" aria-label="Ir para seção de sobre"
                                 class="border-2 border-[--yellow] py-2 px-8 flex items-center justify-center w-full text-nowrap rounded-full
                                 hover:bg-[--blue] duration-300 ease-in-out
                                 hover:text-white duration-300 ease-in-out
@@ -652,12 +666,6 @@
                             Palavras de quem confia no<br> nosso trabalho
                         </h2>
                     </section>
-
-                    <section aria-hidden="true" class="hidden md:flex">
-                        <img src="src/assets/svgs/"  
-                        class="absolute right-0 opacity-45 z-[-1]
-                        lg:top-0 w-[24rem] border border-blue-500" <!--! COLOCAR IMAGEM AQUI -->
-                    </section>
                 </header>
 
                 <ul class="grid grid-cols-1 gap-5 mt-8
@@ -768,25 +776,21 @@
                     </section>
 
                     <section aria-hidden="true" class="hidden md:flex">
-                        <img src="src/assets/svgs/"  
+                        <img src="src/assets/svgs/chat.svg"  
                         class="absolute right-0 opacity-45
-                        lg:top-0 w-[24rem] border border-blue-500" <!--! COLOCAR IMAGEM AQUI -->
+                        lg:top-0 w-[24rem]">
                     </section>
 
 
                 </header>
 
-                <form action="" class="flex flex-col mt-5 gap-4 w-full 
-                                md:w-1/2
-                                lg:w-1/3">
+                <form action="" id="formContact" class="flex flex-col mt-5 gap-4 w-full md:w-1/2 lg:w-1/3">
                     <label for="name" class="flex flex-col w-full gap-1">
                         Nome
-                        <input type="text" name="name" id="nameUser" inputmode="latin" pattern="[a-zA-Z\s]+" required
+                        <input type="text" name="name" id="nameUser" required
                             data-group="inputForm" data-event-type="blur" data-class="name"
                             class="border border-[--yellowHover] rounded-lg py-1 px-2 outline-none text-sm
                             focus:border-[--blue]">
-                        <p class="text-xs flex px-4 text-red-700" name="errorMessage" value="nameUser">
-                        </p>
                     </label>
 
                     <label for="email" class="flex flex-col w-full gap-1">
@@ -795,8 +799,6 @@
                             data-group="inputForm" data-event-type="blur" data-class="email"
                             class="border border-[--yellowHover] rounded-lg py-1 px-2 outline-none text-sm
                             focus:border-[--blue]">
-                        <p class="text-xs flex px-4 text-red-700" name="errorMessage" value="emailUser">
-                        </p>
                     </label>
 
                     <label for="" class="flex flex-col w-full gap-1">
@@ -871,9 +873,6 @@
                                 </li>
                             </ul>
                         </div>
-                        
-                        <p class="text-xs flex px-4 text-red-700" name="errorMessage" id="errorSubjectContainer">
-                        </p>
                     </label>
 
                     <div x-data="{counter: 0, typing: false, message: ''}">
@@ -886,11 +885,9 @@
                                 focus:border-[--blue]">
                             </textarea>    
                         </label>
-                         <p class="text-xs flex justify-end" name="errorMessage"
+                         <p class="text-xs flex justify-end"
                                 x-show="typing" x-text="`${counter}/100`"
                                 :class="{'text-red-700': counter === 100}">
-                        </p>
-                        <p class="text-xs flex px-4 text-red-700 md:text-sm" name="errorMessage" value="messageUser">
                         </p>
                     </div>
 
@@ -899,6 +896,35 @@
                                     hover:text-white duration-300 ease-in-out">
                         Enviar
                     </button>
+
+                    <!-- form modal -->
+                     <section class="hidden fixed inset-0 w-full h-full flex items-center justify-center bg-black-1/2 backdrop-blur-[4px] z-30"
+                                id="modal">
+                        <section class="bg-white shadow-sm w-[300px] rounded-lg overflow-hidden">
+                            <header class="flex items-center justify-center p-3 bg-red-600">
+                                <i class="bi bi-exclamation-triangle-fill flex text-3xl text-white"></i>
+                            </header>
+
+                            <main class="flex flex-col p-2 gap-2 bg-white">
+                                <h2 class="w-full text-center font-semibold text-lg">
+                                    Oops!
+                                </h2>
+
+                                <p class="text-center text-sm">
+                                    Você possui campos inválidos no formulário. Por favor, corrija os
+                                    campos para poder enviar sua mensagem.
+                                </p>
+
+                                <button id="buttonModal" class="outline-none m-auto mt-[1rem] py-2 px-4 text-sm bg-zinc-200 rounded-lg font-semibold
+                                        hover:bg-[--blue] transition duration-500 ease-in-out
+                                        hover:text-white transition duration-500 ease-in-out"
+                                        >
+                                    Voltar ao formulário
+                                </button>
+                            </main>
+                        </section>
+
+                     </section>
                 </form>
             </section>
         </main>

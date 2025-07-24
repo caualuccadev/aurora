@@ -1,6 +1,6 @@
 import { handlerMenu, handleMenuItems, handleSocialItems, handleDesktopSocials} from "./utils.js";
 
-import{ inputsValidation } from './utils.js'
+import{ inputsValidation, closeModal } from './utils.js'
 
 window.addEventListener('load', ()=>{
     // functions to change the mobile menu visibility
@@ -10,11 +10,9 @@ window.addEventListener('load', ()=>{
      handleSocialItems(); handleDesktopSocials();
 
      // function to validate the form
-     inputsValidation()
+     inputsValidation(); closeModal();
 
      
 
 })
-
-
 
