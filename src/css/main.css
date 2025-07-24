@@ -58,7 +58,7 @@
     --textColor: #1e1e1e;
 	--light_gray: #F2F2F2;
     --whiteBg: white;
-    --blackOpacity: #0000009f;
+    --blackOpacity: #000000de;
     
     /* text */
     --h1Sizes: clamp(1.25rem, 1vw, 2rem);
